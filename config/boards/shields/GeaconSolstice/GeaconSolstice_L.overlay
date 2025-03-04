@@ -36,11 +36,15 @@
         prechargep = <0x22>;
 	};
 };
-
+  
 / {
+  chosen {
+    zephyr,display = &oled;
+  };
+
   oled: oled {
     compatible = "ssd1306";
     reg = <0x3C>;
     label = "OLED";
   };
-}
+};
