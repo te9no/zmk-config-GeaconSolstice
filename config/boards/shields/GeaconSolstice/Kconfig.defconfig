@@ -1,7 +1,7 @@
 if SHIELD_GEACONSOLSTICE_R
 
 config ZMK_KEYBOARD_NAME
-    default "GeaconSolstice_R"
+    default "Solstice_R"
 
 config ZMK_SPLIT
     default y
@@ -14,7 +14,7 @@ endif
 if SHIELD_GEACONSOLSTICE_L
 
 config ZMK_KEYBOARD_NAME
-    default "GeaconSolstice_L"
+    default "Solstice_L"
 
 config ZMK_SPLIT
     default y
