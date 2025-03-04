@@ -7,6 +7,12 @@
     zmk,physical-layout = &geacon_physical_layout;
   };
 
+  oled: oled {
+    compatible = "ssd1306";
+    reg = <0x3C>;
+    label = "OLED";
+  };
+
   geacon_physical_layout: geacon_physical_layout {
       compatible = "zmk,physical-layout";
       display-name = "Default";
@@ -97,4 +103,3 @@
         >;
     };
 };
-    
