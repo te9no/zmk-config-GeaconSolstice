@@ -1,5 +1,5 @@
 config SHIELD_GEACONSOLSTICE_R
-    def_bool $(shields_list_contains,GeaconSolstice_R)
+    def_bool $(shields_list_contains,Solstice_R)
 
 config SHIELD_GEACONSOLSTICE_L
-    def_bool $(shields_list_contains,GeaconSolstice_L)
+    def_bool $(shields_list_contains,Solstice_L)
