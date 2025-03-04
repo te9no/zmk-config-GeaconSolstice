@@ -36,3 +36,11 @@
         prechargep = <0x22>;
 	};
 };
+
+/ {
+  oled: oled {
+    compatible = "ssd1306";
+    reg = <0x3C>;
+    label = "OLED";
+  };
+}
