@@ -1,0 +1,209 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/bt.h>
+#include <behaviors/rgbled_widget.dtsi>
+
+#define JIS 1
+#define MOUSE 3
+#define SCROLL 4
+#define BT 5
+
+&mt {
+   flavor = "tap-preferred";
+   quick_tap_ms = <125>;
+   tapping_term_ms = <250>;
+};
+ 
+/ {
+    macros {
+        to_layer_0: to_layer_0 {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            label = "TO_LAYER_0";
+        };
+    };
+
+    behaviors {
+        lt_to_layer_0: lt_to_layer_0 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TAP_TO_0";
+            bindings = <&mo>, <&to_layer_0>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+        toJIS: toJIS {
+            compatible = "zmk,behavior-hold-tap";
+            label = "toJIS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            bindings = <&tog>, <&kp>;
+        };
+        mo2: mo2 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N2>, <&kp LBKT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        mo6: mo6 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N6>, <&kp EQUAL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        mo7: mo7 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N7>, <&kp LS(N6)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        mo8: mo8 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N8>, <&kp LS(SQT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        mo9: mo9 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N9>, <&kp LS(N8)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        mo0: mo0 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N0>, <&kp LS(N9)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        moMINUS: moMINUS {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp LS(INT_RO)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        moEQUAL: moEQUAL {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LS(MINUS)>, <&kp COLON>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        moLBKT: moLBKT {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RBKT>, <&kp LS(RBRC)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        moRBKT: moRBKT {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSLH>, <&kp LS(BSLH)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        moSEMI: moSEMI {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SEMI>, <&kp SQT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        moSQT: moSQT {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N7)>, <&kp LS(N2)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        moGRAVE: moGRAVE {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LBRC)>, <&kp LS(EQUAL)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+    }; 
+ 
+   keymap {
+        compatible = "zmk,keymap";
+        default_layer {
+            bindings = <
+&kp CAPS       &kp N1    &kp N2     &kp N3     &kp N4     &kp N5       &kp N6    &kp N7     &kp N8     &kp N9     &kp N0    &kp MINUS  &kp EQUAL      &kp BKSP
+&toJIS 1 TAB   &kp Q     &kp W      &kp E      &kp R      &kp T        &kp Y     &kp U      &kp I      &kp O      &kp P     &kp LBKT   &kp RBKT       &lt 5 BSLH
+&kp CAPS       &kp A     &kp S      &kp D      &kp F      &kp G        &kp H     &kp J      &kp K      &kp L      &kp SEMI  &kp SQT                   &kp ENTER
+&kp LSHFT      &kp Z     &kp X      &kp C      &kp V      &kp B        &kp N     &kp M      &kp COMMA  &kp DOT    &kp FSLH  &kp RSHFT                 &kp UP
+&mt LCTL ESC   &kp LGUI  &kp LALT   &kp SPACE  &lt 2 SPACE                                                                                   &kp LEFT &kp DOWN &kp RIGHT
+>;
+       };
+
+        jis_layer {
+           bindings = <
+&kp CAPS       &kp N1    &mo2       &kp N3     &kp N4     &kp N5       &mo6      &mo7       &mo8       &mo9       &mo0      &moMINUS   &moEQUAL        &kp BKSP
+&toJIS 1 TAB   &kp Q     &kp W      &kp E      &kp R      &kp T        &kp Y     &kp U      &kp I      &kp O      &kp P     &moLBKT    &moRBKT         &lt 5 INT3
+&kp CAPS       &kp A     &kp S      &kp D      &kp F      &kp G        &kp H     &kp J      &kp K      &kp L      &moSEMI   &moSQT                     &kp ENTER
+&kp LSHFT      &kp Z     &kp X      &kp C      &kp V      &kp B        &kp N     &kp M      &kp COMMA  &kp DOT    &kp FSLH  &kp RSHFT                  &kp UP
+&mt LCTL ESC   &kp LGUI  &kp LALT   &kp SPACE  &lt 2 SPACE                                                                                    &kp LEFT &kp DOWN &kp RIGHT
+>;
+       };
+
+       function_layer {
+           bindings = <
+&moGRAVE      &kp F1     &kp F2     &kp F3     &kp F4     &kp F5       &kp F6    &kp F7     &kp F8     &kp F9     &kp F10   &kp F11    &kp F12         &trans
+&trans        &kp PG_UP  &kp UP     &kp PG_DN  &kp HOME   &trans       &trans    &trans     &trans     &trans     &trans    &trans     &trans          &kp PSCRN
+&trans        &kp LEFT   &kp DOWN   &kp RIGHT  &kp END    &trans       &trans    &trans     &trans     &trans     &trans    &trans                     &trans
+&trans        &kp BKSP   &kp DEL    &trans     &trans     &trans       &trans    &trans     &trans     &trans     &trans    &trans                     &trans
+&trans        &trans     &kp LALT   &kp ENTER  &kp ENTER                                                                                      &trans   &trans   &trans
+>;
+       };
+
+       mouse_layer {
+           bindings = <
+&trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &trans     &trans    &trans     &trans          &trans
+&trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &trans     &trans    &trans     &trans          &trans
+&trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &trans     &trans    &trans                     &trans
+&trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &mkp MB1   &mkp MB3  &mkp MB2                   &trans
+&trans        &trans     &trans                &trans     &trans                                                                              &trans   &trans   &trans
+>;
+       };
+
+       scroll_layer {
+           bindings = <
+&trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &trans     &trans    &trans     &trans          &trans
+&trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &trans     &trans    &trans     &trans          &trans
+&trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &trans     &trans    &trans                     &trans
+&trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &mkp MB1   &mkp MB3  &mkp MB2                   &trans
+&trans        &trans     &trans                &trans     &trans                                                                              &trans   &trans   &trans
+>;
+       };
+
+        bt_layer {
+           bindings = <
+&bt BT_CLR     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4  &trans  &trans  &trans  &trans  &trans  &trans       &trans         &trans
+&bt BT_CLR_ALL &trans       &trans       &trans       &trans       &trans        &trans  &trans  &trans  &trans  &trans  &trans       &trans         &trans
+&trans         &trans       &trans       &trans       &trans       &trans        &trans  &trans  &trans  &trans  &trans  &trans                      &trans
+&trans         &trans       &trans       &trans       &trans       &trans        &trans  &trans  &trans  &trans  &trans  &trans                      &trans
+&trans         &trans       &trans       &trans       &trans                                                                                &trans   &trans   &trans
+>;
+        };
+    };
+};
+
+/ {
+    aliases {
+        led-red = &led0;
+        led-green = &led1;
+        led-blue = &led2;
+    };
+
+    leds {
+        compatible = "gpio-leds";
+        status = "okay";
+        led0: led_0 {
+            gpios = <&gpio0 26 GPIO_ACTIVE_LOW>;  // red LED, connected to P0.26
+        };
+        led1: led_1 {
+            gpios = <&gpio0 30 GPIO_ACTIVE_LOW>;  // green LED, connected to P0.30
+        };
+        led2: led_2 {
+            gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;  // blue LED, connected to P0.06
+        };
+    };
+};
