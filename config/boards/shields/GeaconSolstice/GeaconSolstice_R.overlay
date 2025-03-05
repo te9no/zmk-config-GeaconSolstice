@@ -25,8 +25,8 @@
 &spi0 {
     status = "okay";
     cs-gpios =  <&xiao_d 0 GPIO_ACTIVE_LOW>;
-    pinctrl0-0 = <&spi0_default>;
-    pinctrl0-1 = <&spi0_sleep>;
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
     compatible = "nordic,nrf-spim";
 
