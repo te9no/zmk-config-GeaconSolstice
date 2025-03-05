@@ -23,8 +23,8 @@
 	oled: ssd1306@3c {
 		compatible = "solomon,ssd1306fb";
 		reg = <0x3c>;
-		pinctrl1-0 = <&i2c0_default>;
-    pinctrl1-1 = <&i2c0_sleep>;
+		pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
     pinctrl-names = "default", "sleep";
 		width = <128>;
     height = <32>;
