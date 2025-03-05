@@ -9,17 +9,17 @@
 };
 
 &kscan0 {
-  compatible = "zmk,kscan-gpio-charlieplex";
-  interrupt-gpios = <&xiao_d 7 (GPIO_ACTIVE_LOW)>;
-  gpios
-      = <&xiao_d 0 (GPIO_ACTIVE_LOW)>
-      , <&xiao_d 1 (GPIO_ACTIVE_LOW)>
-      , <&xiao_d 2 (GPIO_ACTIVE_LOW)>
-      , <&xiao_d 3 (GPIO_ACTIVE_LOW)>
-      , <&xiao_d 4 (GPIO_ACTIVE_LOW)>
-      , <&xiao_d 5 (GPIO_ACTIVE_LOW)>
-      , <&xiao_d 6 (GPIO_ACTIVE_LOW)>
-      ;
+    compatible = "zmk,kscan-gpio-charlieplex";
+    interrupt-gpios = <&xiao_d 7 (GPIO_ACTIVE_LOW)>;
+    gpios
+        = <&xiao_d 6 (GPIO_ACTIVE_LOW)>
+        , <&xiao_d 7 (GPIO_ACTIVE_LOW)>
+        , <&xiao_d 8 (GPIO_ACTIVE_LOW)>
+        , <&xiao_d 9 (GPIO_ACTIVE_LOW)>
+        , <&xiao_d 10 (GPIO_ACTIVE_LOW)>
+        , <&gpio0 9 GPIO_ACTIVE_LOW>
+        , <&gpio0 10 GPIO_ACTIVE_LOW>
+        ;
 };
 
 &spi0 {
@@ -44,14 +44,14 @@
 };
 
 / {
-  trackball_listener {
-    status = "okay";
-    compatible = "zmk,input-listener";
-    device = <&trackball>;
-    input-processors = <&zip_temp_layer 3 1000>;
-    scroll {
-      layers = <2>;
-      input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
+    trackball_listener {
+        status = "okay";
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+        input-processors = <&zip_temp_layer 3 1000>;
+        scroll {
+            layers = <2>;
+            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
+        };
     };
-  };
 };
