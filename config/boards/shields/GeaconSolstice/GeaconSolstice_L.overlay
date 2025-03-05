@@ -1,7 +1,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
-#include "GeaconSolstice_pinctrl.dtsi"
+#include "GeaconSolstice_pinctrl_L.dtsi"
 #include "GeaconSolstice.dtsi"
 
 &kscan0 {
