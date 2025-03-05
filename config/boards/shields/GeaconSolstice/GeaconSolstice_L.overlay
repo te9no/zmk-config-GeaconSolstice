@@ -4,44 +4,48 @@
 #include "GeaconSolstice_pinctrl_L.dtsi"
 #include "GeaconSolstice.dtsi"
 
+/ {
+    chosen {
+        zephyr,display = &oled;
+    };
+};
+
 &kscan0 {
-  compatible = "zmk,kscan-gpio-charlieplex";
-  interrupt-gpios = <&xiao_d 7 (GPIO_ACTIVE_LOW)>;
-  gpios
-      = <&xiao_d 0 (GPIO_ACTIVE_LOW)>
-      , <&xiao_d 1 (GPIO_ACTIVE_LOW)>
-      , <&xiao_d 2 (GPIO_ACTIVE_LOW)>
-      , <&xiao_d 3 (GPIO_ACTIVE_LOW)>
-      , <&xiao_d 4 (GPIO_ACTIVE_LOW)>
-      , <&xiao_d 5 (GPIO_ACTIVE_LOW)>
-      , <&xiao_d 6 (GPIO_ACTIVE_LOW)>
-      ;
+    compatible = "zmk,kscan-gpio-charlieplex";
+    interrupt-gpios = <&xiao_d 7 (GPIO_ACTIVE_LOW)>;
+    gpios
+        = <&xiao_d 0 (GPIO_ACTIVE_LOW)>
+        , <&xiao_d 1 (GPIO_ACTIVE_LOW)>
+        , <&xiao_d 2 (GPIO_ACTIVE_LOW)>
+        , <&xiao_d 3 (GPIO_ACTIVE_LOW)>
+        , <&xiao_d 4 (GPIO_ACTIVE_LOW)>
+        , <&xiao_d 5 (GPIO_ACTIVE_LOW)>
+        , <&xiao_d 6 (GPIO_ACTIVE_LOW)>
+        ;
 };
 
 &i2c0 {
-	status = "okay";
-	oled: ssd1306@3c {
-		compatible = "solomon,ssd1306fb";
-		reg = <0x3c>;
-		pinctrl-0 = <&i2c0_default>;
+    compatible = "nordic,nrf-twim"; // I2C controller instead of generic
+	  status = "okay";
+
+    pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
     pinctrl-names = "default", "sleep";
-		width = <128>;
-    height = <32>;
-    segment-offset = <0>;
-    page-offset = <0>;
-    display-offset = <0>;
-    multiplex-ratio = <31>;
-    segment-remap;
-    com-invdir;
-    com-sequential;
-    inversion-on;
-    prechargep = <0x22>;
-	};
+    
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <32>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <31>;
+        segment-remap;
+        com-invdir;
+        com-sequential;
+        inversion-on;
+        prechargep = <0x22>;
+    };
 };
   
-/ {
-  chosen {
-    zephyr,display = &oled;
-  };
-};
