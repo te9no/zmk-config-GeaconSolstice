@@ -130,7 +130,7 @@
 &toJIS 1 TAB   &kp Q     &kp W      &kp E      &kp R      &kp T        &kp Y     &kp U      &kp I      &kp O      &kp P     &kp LBKT   &kp RBKT       &lt 5 BSLH
 &kp CAPS       &kp A     &kp S      &kp D      &kp F      &kp G        &kp H     &kp J      &kp K      &kp L      &kp SEMI  &kp SQT                   &kp ENTER
 &kp LSHFT      &kp Z     &kp X      &kp C      &kp V      &kp B        &kp N     &kp M      &kp COMMA  &kp DOT    &kp FSLH  &kp RSHFT                 &kp UP
-&mt LCTL ESC   &kp LGUI  &kp LALT   &kp SPACE  &lt 2 SPACE                                                                                   &kp LEFT &kp DOWN &kp RIGHT
+&mt LCTL ESC   &kp LGUI  &kp LALT   &kp SPACE  &lt 2 SPACE             &lt 2 SPACE                                                           &kp LEFT &kp DOWN &kp RIGHT
 >;
        };
 
@@ -140,7 +140,7 @@
 &toJIS 1 TAB   &kp Q     &kp W      &kp E      &kp R      &kp T        &kp Y     &kp U      &kp I      &kp O      &kp P     &moLBKT    &moRBKT         &lt 5 INT3
 &kp CAPS       &kp A     &kp S      &kp D      &kp F      &kp G        &kp H     &kp J      &kp K      &kp L      &moSEMI   &moSQT                     &kp ENTER
 &kp LSHFT      &kp Z     &kp X      &kp C      &kp V      &kp B        &kp N     &kp M      &kp COMMA  &kp DOT    &kp FSLH  &kp RSHFT                  &kp UP
-&mt LCTL ESC   &kp LGUI  &kp LALT   &kp SPACE  &lt 2 SPACE                                                                                    &kp LEFT &kp DOWN &kp RIGHT
+&mt LCTL ESC   &kp LGUI  &kp LALT   &kp SPACE  &lt 2 SPACE             &lt 2 SPACE                                                        &kp LEFT &kp DOWN &kp RIGHT
 >;
        };
 
@@ -150,7 +150,7 @@
 &trans        &kp PG_UP  &kp UP     &kp PG_DN  &kp HOME   &trans       &trans    &trans     &trans     &trans     &trans    &trans     &trans          &kp PSCRN
 &trans        &kp LEFT   &kp DOWN   &kp RIGHT  &kp END    &trans       &trans    &trans     &trans     &trans     &trans    &trans                     &trans
 &trans        &kp BKSP   &kp DEL    &trans     &trans     &trans       &trans    &trans     &trans     &trans     &trans    &trans                     &trans
-&trans        &trans     &kp LALT   &kp ENTER  &kp ENTER                                                                                      &trans   &trans   &trans
+&trans        &trans     &kp LALT   &kp ENTER  &kp ENTER               &kp ENTER                                                              &trans   &trans   &trans
 >;
        };
 
@@ -160,7 +160,7 @@
 &trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &trans     &trans    &trans     &trans          &trans
 &trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &trans     &trans    &trans                     &trans
 &trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &mkp MB1   &mkp MB3  &mkp MB2                   &trans
-&trans        &trans     &trans                &trans     &trans                                                                              &trans   &trans   &trans
+&trans        &trans     &trans                &trans     &trans       &trans                                                                 &trans   &trans   &trans
 >;
        };
 
@@ -170,7 +170,7 @@
 &trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &trans     &trans    &trans     &trans          &trans
 &trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &trans     &trans    &trans                     &trans
 &trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &mkp MB1   &mkp MB3  &mkp MB2                   &trans
-&trans        &trans     &trans                &trans     &trans                                                                              &trans   &trans   &trans
+&trans        &trans     &trans                &trans     &trans       &trans                                                                 &trans   &trans   &trans
 >;
        };
 
@@ -180,7 +180,7 @@
 &bt BT_CLR_ALL &trans       &trans       &trans       &trans       &trans        &trans  &trans  &trans  &trans  &trans  &trans       &trans         &trans
 &trans         &trans       &trans       &trans       &trans       &trans        &trans  &trans  &trans  &trans  &trans  &trans                      &trans
 &trans         &trans       &trans       &trans       &trans       &trans        &trans  &trans  &trans  &trans  &trans  &trans                      &trans
-&trans         &trans       &trans       &trans       &trans                                                                                &trans   &trans   &trans
+&trans         &trans       &trans       &trans       &trans                     &trans                                                     &trans   &trans   &trans
 >;
         };
     };
