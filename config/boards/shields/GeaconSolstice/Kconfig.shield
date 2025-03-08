@@ -1,5 +1,8 @@
-config SHIELD_GEACONSOLSTICE_R
-    def_bool $(shields_list_contains,Solstice_R)
+# Copyright (c) 2020 Pete Johanson
+# SPDX-License-Identifier: MIT
 
-config SHIELD_GEACONSOLSTICE_L
-    def_bool $(shields_list_contains,Solstice_L)
+config SHIELD_TENAXOLED_LEFT
+	def_bool $(shields_list_contains,tenaxoled_left)
+
+config SHIELD_TENAXOLED_RIGHT
+	def_bool $(shields_list_contains,tenaxoled_right)

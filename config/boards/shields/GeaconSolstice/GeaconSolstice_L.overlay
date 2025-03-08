@@ -1,51 +1,17 @@
-#include <dt-bindings/zmk/bt.h>
-#include <input/processors.dtsi>
-#include <dt-bindings/zmk/input_transform.h>
-#include "GeaconSolstice_pinctrl_L.dtsi"
-#include "GeaconSolstice.dtsi"
+/*
+ * Copyright (c) 2020 Pete Johanson
+ *
+ * SPDX-License-Identifier: MIT
+ */
 
-/ {
-    chosen {
-        zephyr,display = &oled;
-    };
-};
+#include "tenaxoled.dtsi"
 
 &kscan0 {
-    compatible = "zmk,kscan-gpio-charlieplex";
-    interrupt-gpios = <&xiao_d 7 (GPIO_ACTIVE_LOW)>;
-    gpios
-        = <&xiao_d 1 (GPIO_ACTIVE_LOW)>
-        , <&xiao_d 2 (GPIO_ACTIVE_LOW)>
-        , <&xiao_d 3 (GPIO_ACTIVE_LOW)>
-        , <&xiao_d 4 (GPIO_ACTIVE_LOW)>
-        , <&xiao_d 5 (GPIO_ACTIVE_LOW)>
-        , <&gpio0 9 GPIO_ACTIVE_LOW>
-        , <&gpio0 10 GPIO_ACTIVE_LOW>
-        ;
+	col-gpios
+		= <&gpio1 11 GPIO_ACTIVE_HIGH>   //Col0
+		, <&gpio1 12 GPIO_ACTIVE_HIGH>   //Col1
+		, <&gpio1 13 GPIO_ACTIVE_HIGH>   //Col2
+		, <&gpio1 14 GPIO_ACTIVE_HIGH>   //Col3
+		, <&gpio1 15 GPIO_ACTIVE_HIGH>   //Col4
+		;
 };
-
-&i2c0 {
-    compatible = "nordic,nrf-twim"; // I2C controller instead of generic
-    status = "okay";
-
-    pinctrl-0 = <&i2c0_default>;
-    pinctrl-1 = <&i2c0_sleep>;
-    pinctrl-names = "default", "sleep";
-    clock-frequency = <100000>; 
-    oled: ssd1306@3c {
-        compatible = "solomon,ssd1306fb";
-        reg = <0x3c>;
-        width = <128>;
-        height = <32>;
-        segment-offset = <0>;
-        page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <31>;
-        segment-remap;
-        com-invdir;
-        com-sequential;
-        inversion-on;
-        prechargep = <0x22>;
-    };
-};
-  
