@@ -20,3 +20,15 @@ config ZMK_SPLIT
     default y
 
 endif
+
+if LVGL
+    config LV_Z_VDB_SIZE
+        default 64
+    config LV_Z_DPI
+        default 148
+    config LV_Z_BITS_PER_PIXEL
+        default 1
+    choice LV_COLOR_DEPTH
+        default LV_COLOR_DEPTH_1
+    endchoice
+endif # LVGL
