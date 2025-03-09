@@ -2,7 +2,7 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include "Solstice_pinctrl_R.dtsi"
-#include "GeaconSolstice.dtsi"
+#include "Solstice.dtsi"
 
 &default_transform {
     col-offset = <6>;
