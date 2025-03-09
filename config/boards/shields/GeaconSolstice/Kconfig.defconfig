@@ -1,4 +1,4 @@
-if SHIELD_GEACONSOLSTICE_R
+if SHIELD_SOLSTICE_R
     config ZMK_KEYBOARD_NAME
         default "Solstice_R"
 
@@ -6,7 +6,7 @@ if SHIELD_GEACONSOLSTICE_R
         default y
 endif
 
-if SHIELD_GEACONSOLSTICE_L
+if SHIELD_SOLSTICE_L
     config ZMK_KEYBOARD_NAME
         default "Solstice_L"
 
@@ -14,7 +14,7 @@ if SHIELD_GEACONSOLSTICE_L
         default y
 endif
 
-if SHIELD_GEACONSOLSTICE_L || SHIELD_GEACONSOLSTICE_R
+if SHIELD_SOLSTICE_L || SHIELD_SOLSTICE_R
     config ZMK_SPLIT
         default y
 

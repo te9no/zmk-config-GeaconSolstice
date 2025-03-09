@@ -1,6 +1,6 @@
 file_format: "1"
-id: GeaconSolstice_L
-name: GeaconSolstice_L
+id: Solstice_L
+name: Solstice_L
 type: shield
 url: https://github.com/englmaxi/zmk-dongle-display
 requires: 
