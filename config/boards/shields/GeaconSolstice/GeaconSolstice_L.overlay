@@ -16,11 +16,6 @@
     gpios
         = <&xiao_d 1 (GPIO_ACTIVE_LOW)>
         , <&xiao_d 2 (GPIO_ACTIVE_LOW)>
-        , <&xiao_d 3 (GPIO_ACTIVE_LOW)>
-        , <&xiao_d 4 (GPIO_ACTIVE_LOW)>
-        , <&xiao_d 5 (GPIO_ACTIVE_LOW)>
-        , <&gpio0 9 GPIO_ACTIVE_LOW>
-        , <&gpio0 10 GPIO_ACTIVE_LOW>
         ;
 };
 
