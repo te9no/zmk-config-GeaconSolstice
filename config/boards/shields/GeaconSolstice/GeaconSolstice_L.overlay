@@ -68,4 +68,5 @@ display_i2c: &i2c0 {
     chosen {
         zephyr,display = &oled;
     };
+    ext-power { init-delay-ms = <100>; }
 };
