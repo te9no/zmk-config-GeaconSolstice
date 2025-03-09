@@ -42,16 +42,13 @@
     };
 };
 
-xiao_i2c: &i2c0 {
+&xiao_i2c {
+    status = "okay";
     compatible = "nordic,nrf-twi";
     pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
     pinctrl-names = "default", "sleep";
- };
-
-&xiao_i2c {
-    status = "okay";
-
+    
     clock-frequency = <100000>; 
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
