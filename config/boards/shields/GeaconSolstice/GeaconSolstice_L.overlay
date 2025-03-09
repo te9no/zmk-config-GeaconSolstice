@@ -32,9 +32,9 @@
     pinctrl-1 = <&i2c0_sleep>;
     pinctrl-names = "default", "sleep";
     clock-frequency = <100000>; 
-    oled: ssd1306@3c {
+    oled: ssd1306@3a {
         compatible = "solomon,ssd1306fb";
-        reg = <0x3c>;
+        reg = <0x3a>;
         width = <128>;
         height = <32>;
         segment-offset = <0>;
