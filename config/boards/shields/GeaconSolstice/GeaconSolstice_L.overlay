@@ -48,18 +48,10 @@ display_i2c: &i2c0 {
 	oled: ssd1306@3c {
 		compatible = "solomon,ssd1306";
 		reg = <0x3c>;
-		label = "DISPLAY";
-		width = <128>;
-		height = <32>;
-		segment-offset = <0>;
-		page-offset = <0>;
-		display-offset = <0>;
-		multiplex-ratio = <31>;
-		segment-remap;
-		com-invdir;
-		inversion-on;
-		com-sequential;
-		prechargep = <0x22>;
+		solomon,height = <64>;
+		solomon,width = <128>;
+		solomon,page-offset = <0>;
+		solomon,segment-no-remap;
 	};
 };
 
