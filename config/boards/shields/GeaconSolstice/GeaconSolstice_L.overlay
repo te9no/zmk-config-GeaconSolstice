@@ -4,6 +4,12 @@
 #include "GeaconSolstice_pinctrl_L.dtsi"
 #include "GeaconSolstice.dtsi"
 
+/ {
+    chosen {
+        zephyr,display = &oled;
+    };
+};
+
 &kscan0 {
     compatible = "zmk,kscan-gpio-charlieplex";
     interrupt-gpios = <&xiao_d 7 (GPIO_ACTIVE_LOW)>;
@@ -23,6 +29,7 @@
         group1 {
             psels = <NRF_PSEL(TWIM_SDA, 1, 13)>,
                     <NRF_PSEL(TWIM_SCL, 1, 14)>;
+                    bias-pull-up;       // Add pull-up resistors
         };
     };
       
@@ -40,24 +47,30 @@ display_i2c: &i2c0 {
     pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
     pinctrl-names = "default", "sleep";
-    clock-frequency = <I2C_BITRATE_STANDARD>;
  };
 
-&display_i2c {
- 	status = "okay";
-	oled: ssd1306@3c {
-		compatible = "solomon,ssd1306";
-		reg = <0x3c>;
-		solomon,height = <64>;
-		solomon,width = <128>;
-		solomon,page-offset = <0>;
-		solomon,segment-no-remap;
-	};
-};
+&i2c0 {
+    compatible = "nordic,nrf-twim"; // I2C controller instead of generic
+    status = "okay";
 
-/ {
-    chosen {
-        zephyr,display = &oled;
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
+    clock-frequency = <100000>; 
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <32>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <31>;
+        segment-remap;
+        com-invdir;
+        com-sequential;
+        inversion-on;
+        prechargep = <0x22>;
     };
-    ext-power { init-delay-ms = <3000>; };
 };
+  
