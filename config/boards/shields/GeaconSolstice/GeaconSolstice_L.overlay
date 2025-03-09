@@ -48,6 +48,7 @@ display_i2c: &i2c0 {
  	status = "okay";
 	oled: ssd1306@3c {
 		compatible = "solomon,ssd1306fb";
+        clock-frequency = <I2C_BITRATE_STANDARD>;
 		reg = <0x3c>;
 		label = "DISPLAY";
 		width = <128>;
@@ -68,5 +69,5 @@ display_i2c: &i2c0 {
     chosen {
         zephyr,display = &oled;
     };
-    ext-power { init-delay-ms = <100>; };
+    ext-power { init-delay-ms = <3000>; };
 };
