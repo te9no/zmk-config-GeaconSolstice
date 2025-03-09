@@ -50,7 +50,7 @@ display_i2c: &i2c0 {
  };
 
 &i2c0 {
-    compatible = "nordic,nrf-twi"; // I2C controller instead of generic
+    compatible = "nordic,nrf-twi";
     status = "okay";
 
     pinctrl-0 = <&i2c0_default>;
