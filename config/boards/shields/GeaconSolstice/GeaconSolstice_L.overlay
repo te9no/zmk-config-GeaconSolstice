@@ -39,4 +39,5 @@
         prechargep = <0x22>;
     };
 };
-  
+
+&xiao_serial { status = "disabled"; };
