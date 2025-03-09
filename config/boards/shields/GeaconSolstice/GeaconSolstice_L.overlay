@@ -42,14 +42,14 @@
     };
 };
 
-display_i2c: &i2c0 {
+xiao_i2c: &i2c0 {
     compatible = "nordic,nrf-twi";
     pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
     pinctrl-names = "default", "sleep";
  };
 
-&i2c0 {
+&xiao_i2c {
     compatible = "nordic,nrf-twi"; // I2C controller instead of generic
     status = "okay";
 
