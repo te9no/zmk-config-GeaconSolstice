@@ -16,6 +16,11 @@
     gpios
         = <&xiao_d 1 (GPIO_ACTIVE_LOW)>
         , <&xiao_d 2 (GPIO_ACTIVE_LOW)>
+        , <&xiao_d 3 (GPIO_ACTIVE_LOW)>
+        , <&xiao_d 4 (GPIO_ACTIVE_LOW)>
+        , <&xiao_d 5 (GPIO_ACTIVE_LOW)>
+        , <&gpio0 9 GPIO_ACTIVE_LOW>
+        , <&gpio0 10 GPIO_ACTIVE_LOW>
         ;
 };
 
@@ -35,9 +40,12 @@
         segment-offset = <0>;
         page-offset = <0>;
         display-offset = <0>;
-        multiplex-ratio = <61>;
+        multiplex-ratio = <31>;
+        segment-remap;
+        com-invdir;
+        com-sequential;
+        inversion-on;
         prechargep = <0x22>;
     };
 };
-
-&xiao_serial { status = "disabled"; };
+  
