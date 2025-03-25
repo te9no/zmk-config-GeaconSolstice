@@ -3,7 +3,7 @@
 
 / {
 	chosen {
-		zmk,physical-layout = &geacon_physical_layout;
+		zmk,physical-layout = &layout_US;
 	};
 	
 	layout_US: layout_US {
