@@ -9,8 +9,9 @@
 	layout_US: layout_US {
 		compatible = "zmk,physical-layout";
 		display-name = "US";
-		
-		keys//                     w   h    x    y     rot    rx    ry
+      transform = <&default_transform>;
+      
+		keys//                    w   h    x    y     rot    rx    ry
 		= <&key_physical_attrs 100 100    0    0       0     0     0>
 		, <&key_physical_attrs 100 100  100    0       0     0     0>
 		, <&key_physical_attrs 100 100  201    2     375   251    52>
@@ -80,6 +81,7 @@
 	layout_JIS: layout_JIS {
 		compatible = "zmk,physical-layout";
 		display-name = "JIS";
+      transform = <&default_transform>;
 		
 		keys//                     w   h    x    y     rot    rx    ry
 		= <&key_physical_attrs 100 100    0    0       0     0     0>
