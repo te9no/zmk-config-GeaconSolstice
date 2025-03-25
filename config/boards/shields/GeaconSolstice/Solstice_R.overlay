@@ -1,8 +1,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
-#include "GeaconSolstice_pinctrl_R.dtsi"
-#include "GeaconSolstice.dtsi"
+#include "Solstice_pinctrl_R.dtsi"
+#include "Solstice.dtsi"
 
 &default_transform {
     col-offset = <6>;
