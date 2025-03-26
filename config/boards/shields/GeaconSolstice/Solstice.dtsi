@@ -9,8 +9,8 @@
 	layout_US: layout_US {
 		compatible = "zmk,physical-layout";
 		display-name = "US";
-      transform = <&default_transform>;
-      kscan = <&kscan0>;
+		transform = <&default_transform>;
+		kscan = <&kscan0>;
 
 		keys//                    w   h    x    y     rot    rx    ry
 		= <&key_physical_attrs 100 100    0    0       0     0     0>
@@ -82,8 +82,8 @@
 	layout_JIS: layout_JIS {
 		compatible = "zmk,physical-layout";
 		display-name = "JIS";
-      transform = <&default_transform>;
-      kscan = <&kscan0>;
+		transform = <&default_transform>;
+		kscan = <&kscan0>;
 		
 		keys//                     w   h    x    y     rot    rx    ry
 		= <&key_physical_attrs 100 100    0    0       0     0     0>
