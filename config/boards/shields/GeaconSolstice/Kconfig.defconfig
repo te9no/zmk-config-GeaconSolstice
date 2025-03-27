@@ -2,7 +2,7 @@ if SHIELD_SOLSTICE_R
     config ZMK_KEYBOARD_NAME
         default "Solstice_R"
 
-    config ZMK_SPLIT_ROLE_CENTRAL
+    config ZMK_SPLIT
         default y
 endif
 
@@ -12,6 +12,9 @@ if SHIELD_SOLSTICE_L
 
     config ZMK_SPLIT
         default y
+
+    config ZMK_SPLIT_ROLE_CENTRAL
+    default y
 endif
 
 if SHIELD_SOLSTICE_L || SHIELD_SOLSTICE_R
