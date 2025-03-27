@@ -24,7 +24,7 @@ manifest:
       remote: badjeff
       revision: main
     - name: zmk-dongle-display
-      remote: te9no
+      remote: redmasters
       revision: main
   self:
     path: config
