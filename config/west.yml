@@ -8,6 +8,10 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: badjeff
       url-base: https://github.com/badjeff
+    # dongle_display
+    - name: englmaxi
+      url-base: https://github.com/englmaxi
+    # nice_oled - nice_epaper - dongle_display!view - oled Adapter
     - name: mctechnology17
       url-base: https://github.com/mctechnology17
   projects:
@@ -21,6 +25,15 @@ manifest:
     - name: zmk-pmw3610-driver
       remote: badjeff
       revision: main
+    # dongle_display
+    - name: zmk-dongle-display
+      remote: englmaxi
+      revision: main
+    # nice_oled - nice_epaper
+    - name: zmk-nice-oled
+      remote: mctechnology17
+      revision: main
+    # dongle_display!view
     - name: zmk-dongle-display-view
       remote: mctechnology17
       revision: main
