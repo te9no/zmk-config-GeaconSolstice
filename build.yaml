@@ -3,7 +3,7 @@ include:
   - board: seeeduino_xiao_ble
     shield: Solstice_L rgbled_adapter dongle_display
     snippet: zmk-usb-logging studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
   - board: seeeduino_xiao_ble
     shield: Solstice_R rgbled_adapter
     snippet: zmk-usb-logging studio-rpc-usb-uart
