@@ -10,6 +10,8 @@ manifest:
       url-base: https://github.com/badjeff
     - name: redmasters
       url-base: https://github.com/redmasters
+    - name: te9no
+      url-base: https://github.com/te9no
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -22,7 +24,7 @@ manifest:
       remote: badjeff
       revision: main
     - name: zmk-dongle-display
-      remote: redmasters
+      remote: te9no
       revision: main
   self:
     path: config
