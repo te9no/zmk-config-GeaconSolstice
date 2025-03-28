@@ -11,24 +11,20 @@
 
 &mt {
    flavor = "tap-preferred";
-   quick_tap_ms = <125>;
-   tapping_term_ms = <250>;
 };
- 
+
 / {
     macros {
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
-            label = "TO_LAYER_0";
         };
     };
 
     behaviors {
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_TO_0";
             bindings = <&mo>, <&to_layer_0>;
 
             #binding-cells = <2>;
@@ -36,7 +32,6 @@
         };
         toJIS: toJIS {
             compatible = "zmk,behavior-hold-tap";
-            label = "toJIS";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
