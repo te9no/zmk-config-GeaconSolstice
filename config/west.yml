@@ -27,7 +27,7 @@ manifest:
     #   remote: te9no
     #   revision: main
     - name: zmk-nice-oled
-      remote: mctechnology17
+      remote: te9no
       revision: main
   self:
     path: config
