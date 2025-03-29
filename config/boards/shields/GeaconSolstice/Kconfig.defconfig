@@ -37,5 +37,4 @@ endif
 if SHIELD_SOLSTICE_L || SHIELD_SOLSTICE_R
     config ZMK_SPLIT
         default y
-
 endif
