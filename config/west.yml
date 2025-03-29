@@ -10,6 +10,8 @@ manifest:
       url-base: https://github.com/badjeff
     - name: te9no
       url-base: https://github.com/te9no
+    - name: mctechnology17
+      url-base: https://github.com/mctechnology17
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -23,6 +25,9 @@ manifest:
       revision: main
     - name: zmk-dongle-display
       remote: te9no
+      revision: main
+    - name: zmk-nice-oled
+      remote: mctechnology17
       revision: main
   self:
     path: config
