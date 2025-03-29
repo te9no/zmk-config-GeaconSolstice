@@ -73,7 +73,7 @@
 
 &xiao_i2c {
     status = "okay";
-    compatible = "nordic,nrf-twi";
+    compatible = "nordic,nrf-twim";
     pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
     pinctrl-names = "default", "sleep";
