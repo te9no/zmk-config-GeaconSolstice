@@ -5,6 +5,10 @@
 #include "Solstice_pinctrl_L.dtsi"
 #include "Solstice.dtsi"
 
+&adc {
+	status = "okay";
+};
+
 / {
     chosen {
         zephyr,display = &oled;
