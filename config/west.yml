@@ -28,7 +28,7 @@ manifest:
       revision: main
     - name: zmk-dongle-display
       remote: te9no
-      revision: main
+      revision: test
     # - name: zmk-nice-oled
     #   remote: te9no
     #   revision: main
