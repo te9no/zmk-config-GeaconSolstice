@@ -1,5 +1,12 @@
-on: [push, pull_request, workflow_dispatch]
-
-jobs:
-  build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+on: 
+  workflow_dispatch:
+ #  push:
+ #    paths:
+ #      - config/**
+ #      - boards/**
+ #      - build.yaml
+ 
+ jobs:
+   build:
+     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+ 
