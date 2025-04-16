@@ -21,7 +21,7 @@
 [here](https://github.com/te9no/zmk-config-GeaconSolstice/blob/main/docs%2Fbuildguide.md)
 
 ## ファームウェア
-[Github](https://github.com/te9no/zmk-config-GeaconSolstice/firmware)  
+[Github](https://github.com/te9no/zmk-config-GeaconSolstice/tree/main/firmware)  
 
 ## 注意事項
 リポバッテリーを不適切に取り扱うと発火等の危険性があります。  
