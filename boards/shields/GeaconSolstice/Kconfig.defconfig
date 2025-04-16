@@ -8,7 +8,7 @@ if SHIELD_SOLSTICE_L
         default "Solstice_L"
 
     config ZMK_SPLIT_ROLE_CENTRAL
-    default y
+        default y
     
     if ZMK_DISPLAY
         config I2C
