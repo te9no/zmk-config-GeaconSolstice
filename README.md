@@ -1,6 +1,6 @@
 # キーボードについて
-キーボード名：GeaconSolstice 
-[Qazikat](https://github.com/weteor/Qazikat)にインスパイアされ、設計したオリジナルキーボードです。
+キーボード名：GeaconSolstice  
+[roBa](https://github.com/kumamuk-git/roBa)や、[GRIN One](https://note.com/policium/n/nc7ceb56d11fe)にインスパイアされて設計したオリジナルキーボードです。
 
 ## 謝辞
 トラックボールケースはkepeoさんのデータを利用させていただきました。  
@@ -10,18 +10,18 @@
 
 ## 特徴
 ・ZMKによる無線接続対応  
-・40%Qazikat風配列  
-・OLED、トラックボール、アナログスティック、タッチスライダー搭載  
-![](keymap-drawer/solkatstice.svg)
+・60%Grin配列  
+・トラックボール搭載  
+![](keymap-drawer/solstice.svg)
 
 ## 販売
 たぶん[booth](https://te9no.booth.pm/)で販売  
 
 ## ビルドガイド
-[here](https://github.com/te9no/zmk-config-Solkatstice/blob/main/docs%2Fbuildguide.md)
+[here](https://github.com/te9no/zmk-config-GeaconSolstice/blob/main/docs%2Fbuildguide.md)
 
 ## ファームウェア
-[Github](https://github.com/te9no/zmk-config-Solkatstice)  
+[Github](https://github.com/te9no/zmk-config-GeaconSolstice/firmware)  
 ## 注意事項
 リポバッテリーを不適切に取り扱うと発火等の危険性があります。  
 接続時の極性の向きや、リード線の短絡、組み立てには十分ご注意下さい。  
