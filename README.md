@@ -1,6 +1,6 @@
 # キーボードについて
 キーボード名：GeaconSolstice  
-[roBa](https://github.com/kumamuk-git/roBa)や、[GRIN One](https://note.com/policium/n/nc7ceb56d11fe)にインスパイアされて設計したオリジナルキーボードです。
+[roBa](https://github.com/kumamuk-git/roBa)や、[GRIN One](https://note.com/policium/n/nc7ceb56d11fe)にインスパイアされて設計したGeaconを、さらに発展させたオリジナルキーボードです。
 
 ## 謝辞
 トラックボールケースはkepeoさんのデータを利用させていただきました。  
@@ -10,8 +10,8 @@
 
 ## 特徴
 ・ZMKによる無線接続対応  
-・60%Grin配列  
-・トラックボール搭載  
+・60%分割Grin配列  
+・トラックボール、OLED、アナログスティック搭載  
 ![](keymap-drawer/solstice.svg)
 
 ## 販売
@@ -22,6 +22,7 @@
 
 ## ファームウェア
 [Github](https://github.com/te9no/zmk-config-GeaconSolstice/firmware)  
+
 ## 注意事項
 リポバッテリーを不適切に取り扱うと発火等の危険性があります。  
 接続時の極性の向きや、リード線の短絡、組み立てには十分ご注意下さい。  
