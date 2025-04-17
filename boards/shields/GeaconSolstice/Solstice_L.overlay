@@ -18,7 +18,7 @@
         compatible = "zmk,analog-input";
         sampling-hz = <100>;
         y-ch {
-            io-channels = <&adc 1>;
+            io-channels = <&adc 8>;
             mv-mid = <1300>;
             mv-min-max = <1600>;
             mv-deadzone = <88>;
@@ -29,7 +29,7 @@
             input-code = <INPUT_REL_Y>;
         };
         x-ch {
-            io-channels = <&adc 0>;
+            io-channels = <&adc 9>;
             mv-mid = <1300>;
             mv-min-max = <1600>;
             mv-deadzone = <88>;
