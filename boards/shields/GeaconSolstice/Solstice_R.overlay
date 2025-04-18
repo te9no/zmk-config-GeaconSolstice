@@ -49,7 +49,7 @@
 		compatible = "zmk,split-peripheral-input-relay";
 
 		/* peripheral side input device, used to be intecepted and be resurrected on central */
-		device = <&pd0>;
+		device = <&trackball>;
 		
 		/* channel id, used to annotate raw input event */
 		/* NOTE: should matching relay-channel on central overlay */
