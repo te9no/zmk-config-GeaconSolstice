@@ -10,6 +10,8 @@ manifest:
       url-base: https://github.com/badjeff
     - name: te9no
       url-base: https://github.com/te9no
+    - name: sayu-hub
+      url-base: https://github.com/sayu-hub
     - name: englmaxi
       url-base: https://github.com/englmaxi
   projects:
