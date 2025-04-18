@@ -44,6 +44,20 @@
 };
 
 / {
+	/* for peripheral side, define (input-device)-to-(relay-channel) mapping */
+	input_relay_config_102 {
+		compatible = "zmk,split-peripheral-input-relay";
+
+		/* peripheral side input device, used to be intecepted and be resurrected on central */
+		device = <&pd0>;
+		
+		/* channel id, used to annotate raw input event */
+		/* NOTE: should matching relay-channel on central overlay */
+		relay-channel = <102>;
+	};
+};
+
+/ {
     trackball_listener {
         status = "okay";
         compatible = "zmk,input-listener";

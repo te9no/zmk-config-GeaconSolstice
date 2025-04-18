@@ -47,6 +47,21 @@
         device = <&anin0>;
         input-processors = <&zip_xy_to_scroll_mapper>;
     };
+
+    pd1: virtual_input {
+        compatible = "zmk,virtual-input";
+    };
+
+    input_relay_config_102 {
+        compatible = "zmk,split-peripheral-input-relay";
+        relay-channel = <102>;
+        device = <&pd1>;
+    };
+
+    trackball_listener { 
+    compatible = "zmk,input-listener";
+    device = <&pd1>;
+    };
 }; 
 
 &kscan0 {
