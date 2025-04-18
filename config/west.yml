@@ -20,8 +20,11 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
-    - name: zmk-pmw3610-driver
-      remote: badjeff
+    # - name: zmk-pmw3610-driver
+    #   remote: badjeff
+    #   revision: main
+    - name: zmk-pmw3610-driver  # <-- トラボドライバ
+      remote: sayu-hub
       revision: main
     - name: zmk-analog-input-driver
       remote: badjeff

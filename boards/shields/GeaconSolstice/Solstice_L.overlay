@@ -26,7 +26,7 @@
             scale-divisor = <500>;
             #invert;
             evt-type = <INPUT_EV_REL>;
-            input-code = <INPUT_REL_Y>;
+            input-code = <INPUT_REL_X>;
         };
         x-ch {
             io-channels = <&adc 3>;
@@ -37,7 +37,7 @@
             scale-divisor = <500>;
             #invert;
             evt-type = <INPUT_EV_REL>;
-            input-code = <INPUT_REL_X>;
+            input-code = <INPUT_REL_Y>;
         };
     };
     
