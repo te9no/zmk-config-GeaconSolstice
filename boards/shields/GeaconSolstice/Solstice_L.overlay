@@ -48,21 +48,32 @@
         input-processors = <&zip_xy_to_scroll_mapper>;
     };
 
-    pd1: virtual_input {
-        compatible = "zmk,virtual-input";
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        trackball_split: trackball_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
     };
 
-    input_relay_config_102 {
-        compatible = "zmk,split-peripheral-input-relay";
-        relay-channel = <102>;
-        device = <&pd1>;
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        device = <&trackball_split>;
     };
+};
 
-    trackball_listener { 
-    compatible = "zmk,input-listener";
-    device = <&pd1>;
+&trackball_listener {
+    status = "okay";
+    input-processors = <&zip_temp_layer 3 700>;
+
+    scroll {
+        layers = <2>;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
     };
-}; 
+};
 
 &kscan0 {
     compatible = "zmk,kscan-gpio-charlieplex";
