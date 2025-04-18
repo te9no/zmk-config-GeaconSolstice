@@ -10,6 +10,8 @@ manifest:
       url-base: https://github.com/badjeff
     - name: te9no
       url-base: https://github.com/te9no
+    - name: englmaxi
+      url-base: https://github.com/englmaxi
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -25,8 +27,10 @@ manifest:
       remote: badjeff
       revision: main
     - name: zmk-dongle-display
-      remote: te9no
-      revision: test
+      # remote: te9no
+      # revision: test
+      remote: englmaxi
+      revision: battery-fix
     # - name: zmk-nice-oled
     #   remote: te9no
     #   revision: main
