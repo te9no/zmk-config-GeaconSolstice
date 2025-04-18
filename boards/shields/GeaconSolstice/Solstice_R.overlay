@@ -29,6 +29,33 @@
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
     compatible = "nordic,nrf-spim";
+
+    trackball: pd@0 {
+        status = "disabled";
+        compatible = "pixart,pmw3610";
+        reg = <0>;
+        spi-max-frequency = <2000000>;
+        irq-gpios = <&gpio0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    };
+};
+
+/*input-split*/
+/ {
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        trackball_split: trackball_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
+    };
+
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        device = <&trackball_split>;
+    };
 };
 
 &trackball {
@@ -46,3 +73,4 @@
 
 &xiao_serial { status = "disabled"; };
 &xiao_i2c { status = "disabled"; };
+&uart0 { status = "disabled";};
