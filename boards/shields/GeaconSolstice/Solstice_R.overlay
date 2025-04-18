@@ -34,7 +34,6 @@
         status = "okay";
         compatible = "pixart,pmw3610";
         reg = <0>;
-  	    cpi = <600>;
         spi-max-frequency = <2000000>;
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
