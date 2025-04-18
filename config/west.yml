@@ -10,8 +10,6 @@ manifest:
       url-base: https://github.com/badjeff
     - name: te9no
       url-base: https://github.com/te9no
-    - name: sayu-hub
-      url-base: https://github.com/sayu-hub
     - name: englmaxi
       url-base: https://github.com/englmaxi
   projects:
@@ -22,11 +20,8 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
-    # - name: zmk-pmw3610-driver
-    #   remote: badjeff
-    #   revision: main
-    - name: zmk-pmw3610-driver  # <-- トラボドライバ
-      remote: sayu-hub
+    - name: zmk-pmw3610-driver
+      remote: badjeff
       revision: main
     - name: zmk-analog-input-driver
       remote: badjeff
