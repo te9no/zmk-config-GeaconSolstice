@@ -26,9 +26,12 @@ manifest:
     # - name: zmk-split-peripheral-input-relay
     #   remote: badjeff
     #   revision: main
-    - name: zmk-analog-input-driver
-      remote: badjeff
-      revision: main
+    # - name: zmk-analog-input-driver
+    #   remote: badjeff
+    #   revision: main
+    - name: zmk-pmw3610-driver-kuma
+      remote: te9no
+      revision: addBhbr
     - name: zmk-dongle-display
       # remote: te9no
       # revision: test

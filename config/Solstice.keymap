@@ -202,13 +202,42 @@
     };
 
     behaviors {
-        lt_to_layer_0: lt_to_layer_0 {
-            compatible = "zmk,behavior-hold-tap";
-            bindings = <&mo>, <&to_layer_0>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
+        pmw_250: pmw_250 {
+            compatible = "zmk,behavior-pmw3610-config";
+            polling-rate = <250>;
+            #binding-cells = <0>;
         };
+        
+        pmw_125: pmw_125 {
+            compatible = "zmk,behavior-pmw3610-config";
+            polling-rate = <125>;
+            #binding-cells = <0>;
+        };
+        
+        pmw_400: pmw_400 {
+            compatible = "zmk,behavior-pmw3610-config";
+            cpi = <400>;
+            #binding-cells = <0>;
+        };
+
+        pmw_600: pmw_600 {
+            compatible = "zmk,behavior-pmw3610-config";
+            cpi = <600>;
+            #binding-cells = <0>;
+        };
+
+        pmw_800: pmw_800 {
+            compatible = "zmk,behavior-pmw3610-config";
+            cpi = <800>;
+            #binding-cells = <0>;
+        };
+        
+        pmw_160: pmw_160 {
+            compatible = "zmk,behavior-pmw3610-config";
+            cpi = <1600>;
+            #binding-cells = <0>;
+        };
+		
         toJIS: toJIS {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -350,11 +379,11 @@
 
         bt_layer {
            bindings = <
-&bt BT_CLR     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4  &trans  &trans  &trans  &trans  &trans  &trans       &trans         &trans   &trans
-&bt BT_CLR_ALL &trans       &trans       &trans       &trans       &trans        &trans  &trans  &trans  &trans  &trans  &trans       &trans         &trans
-&trans         &trans       &trans       &trans       &trans       &trans        &trans  &trans  &trans  &trans  &trans  &trans                      &trans
-&trans         &trans       &trans       &trans       &trans       &trans        &trans  &trans  &trans  &trans  &trans  &trans                      &trans
-&trans         &trans       &trans       &trans       &trans                     &trans                                                     &trans   &trans   &trans
+&bt BT_CLR     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4  &pmw_250 &pmw_125 &trans   &trans   &trans  &trans       &trans         &trans   &trans
+&bt BT_CLR_ALL &trans       &trans       &trans       &trans       &trans        &pmw_400 &pmw_600 &pmw_800 &pmw_160 &trans  &trans       &trans         &trans
+&trans         &trans       &trans       &trans       &trans       &trans        &trans   &trans   &trans   &trans   &trans  &trans                      &trans
+&trans         &trans       &trans       &trans       &trans       &trans        &trans   &trans   &trans   &trans   &trans  &trans                      &trans
+&trans         &trans       &trans       &trans       &trans                     &trans                                                         &trans   &trans   &trans
 >;
         };
     };
