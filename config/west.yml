@@ -20,23 +20,17 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
-    # - name: zmk-pmw3610-driver
-    #   remote: badjeff
-    #   revision: main
-    - name: zmk-pmw3610-driver-kuma
-      remote: te9no
-      revision: addBhbr
-    # - name: zmk-split-peripheral-input-relay
-    #   remote: badjeff
-    #   revision: main
+    - name: zmk-pmw3610-driver
+      remote: badjeff
+      revision: main
     - name: zmk-analog-input-driver
       remote: badjeff
       revision: main
     - name: zmk-dongle-display
-      # remote: te9no
-      # revision: test
-      remote: englmaxi
-      revision: battery-fix
+      remote: te9no
+      revision: test
+      # remote: englmaxi
+      # revision: battery-fix
     # - name: zmk-nice-oled
     #   remote: te9no
     #   revision: main
