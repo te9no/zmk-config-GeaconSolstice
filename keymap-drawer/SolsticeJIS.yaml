@@ -1,4 +1,4 @@
-layout: {zmk_keyboard: Solstice, layout_name: layout_US}
+layout: {zmk_keyboard: SolsticeJIS, layout_name: layout_JIS}
 layers:
   Def:
   - CAPS
@@ -14,8 +14,8 @@ layers:
   - '0'
   - MINUS
   - EQUAL
-  - BKSP
   - INT3
+  - BKSP
   - {t: TAB, h: Fn}
   - Q
   - W
@@ -29,7 +29,7 @@ layers:
   - P
   - LBKT
   - RBKT
-  - {t: BSLH, h: BT}
+  - {t: ENTER, h: BT}
   - CAPS
   - A
   - S
