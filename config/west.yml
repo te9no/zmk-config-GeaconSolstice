@@ -27,10 +27,10 @@ manifest:
       remote: badjeff
       revision: main
     - name: zmk-dongle-display
-      remote: te9no
-      revision: test
-      # remote: englmaxi
-      # revision: battery-fix
+      # remote: te9no
+      # revision: test
+      remote: englmaxi
+      revision: main
     # - name: zmk-nice-oled
     #   remote: te9no
     #   revision: main
