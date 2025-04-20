@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: Solstice, layout_name: layout_US}
 layers:
-  default:
+  Def:
   - CAPS
   - '1'
   - '2'
@@ -16,7 +16,7 @@ layers:
   - EQUAL
   - BKSP
   - INT3
-  - {t: TAB, h: jis}
+  - {t: TAB, h: Fn}
   - Q
   - W
   - E
@@ -29,7 +29,7 @@ layers:
   - P
   - LBKT
   - RBKT
-  - {t: BSLH, h: bt}
+  - {t: BSLH, h: BT}
   - CAPS
   - A
   - S
@@ -60,12 +60,12 @@ layers:
   - LGUI
   - LALT
   - SPACE
-  - {t: SPACE, h: function}
-  - {t: SPACE, h: function}
+  - {t: SPACE, h: Fnc}
+  - {t: SPACE, h: Fnc}
   - LEFT
   - DOWN
   - RIGHT
-  jis:
+  Fn:
   - CAPS
   - '1'
   - {t: '2', s: LBKT}
@@ -81,7 +81,7 @@ layers:
   - {t: Sft+MINUS, s: COLON}
   - BKSP
   - INT3
-  - {t: TAB, h: jis}
+  - {t: TAB, h: Fn}
   - Q
   - W
   - E
@@ -94,7 +94,7 @@ layers:
   - P
   - {t: RBKT, s: Sft+RBRC}
   - {t: BSLH, s: Sft+BSLH}
-  - {t: INT3, h: bt}
+  - {t: INT3, h: BT}
   - CAPS
   - A
   - S
@@ -125,12 +125,12 @@ layers:
   - LGUI
   - LALT
   - SPACE
-  - {t: SPACE, h: function}
-  - {t: SPACE, h: function}
+  - {t: SPACE, h: Fnc}
+  - {t: SPACE, h: Fnc}
   - LEFT
   - DOWN
   - RIGHT
-  function:
+  Fnc:
   - {t: Sft+LBRC, s: Sft+EQUAL}
   - F1
   - F2
@@ -195,7 +195,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  mouse:
+  Mouse:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -260,7 +260,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  scroll:
+  Scr:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -325,7 +325,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  bt:
+  BT:
   - BT CLR
   - {t: BT, h: '0'}
   - {t: BT, h: '1'}
