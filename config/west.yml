@@ -24,7 +24,8 @@ manifest:
       remote: badjeff
       revision: main
     - name: zmk-analog-input-driver
-      remote: badjeff
+#      remote: badjeff
+      remote: te9no
       revision: main
     - name: zmk-dongle-display
       remote: te9no
