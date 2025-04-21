@@ -31,8 +31,5 @@ manifest:
       revision: main
       # remote: englmaxi
       # revision: main
-    # - name: zmk-nice-oled
-    #   remote: te9no
-    #   revision: main
   self:
     path: config
