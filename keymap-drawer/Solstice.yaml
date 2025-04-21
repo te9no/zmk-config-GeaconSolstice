@@ -16,7 +16,7 @@ layers:
   - EQUAL
   - BKSP
   - INT3
-  - {t: TAB, h: Fn}
+  - {t: TAB, h: JIS}
   - Q
   - W
   - E
@@ -65,7 +65,7 @@ layers:
   - LEFT
   - DOWN
   - RIGHT
-  Fn:
+  JIS:
   - CAPS
   - '1'
   - {t: '2', s: LBKT}
@@ -81,7 +81,7 @@ layers:
   - {t: Sft+MINUS, s: COLON}
   - BKSP
   - INT3
-  - {t: TAB, h: Fn}
+  - {t: TAB, h: JIS}
   - Q
   - W
   - E
