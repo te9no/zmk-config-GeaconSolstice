@@ -14,7 +14,8 @@ manifest:
       url-base: https://github.com/englmaxi
   projects:
     - name: zmk
-      remote: zmkfirmware
+      #remote: zmkfirmware
+      remote: te9no
       revision: main
       import: app/west.yml
     - name: zmk-rgbled-widget
@@ -24,8 +25,8 @@ manifest:
       remote: badjeff
       revision: main
     - name: zmk-analog-input-driver
-#      remote: badjeff
-      remote: te9no
+      remote: badjeff
+      #remote: te9no
       revision: main
     - name: zmk-dongle-display
       remote: te9no
