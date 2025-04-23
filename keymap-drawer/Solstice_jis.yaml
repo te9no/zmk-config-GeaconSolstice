@@ -54,7 +54,7 @@ layers:
   - COMMA
   - DOT
   - FSLH
-  - RSHFT
+  - INT1
   - UP
   - {t: ESC, h: LCTL}
   - LGUI
@@ -119,7 +119,7 @@ layers:
   - COMMA
   - DOT
   - FSLH
-  - RSHFT
+  - INT1
   - UP
   - {t: ESC, h: LCTL}
   - LGUI
