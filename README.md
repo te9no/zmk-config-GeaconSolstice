@@ -12,7 +12,13 @@
 ・ZMKによる無線接続対応  
 ・60%分割Grin配列  
 ・トラックボール、OLED、アナログスティック搭載  
+
+### US配列
 ![](keymap-drawer/Solstice.svg)
+
+### JIS配列
+![](keymap-drawer/Solstice_jis.svg)
+
 
 ## 販売
 たぶん[booth](https://te9no.booth.pm/)で販売  
