@@ -14,9 +14,9 @@ layers:
   - '0'
   - MINUS
   - EQUAL
-  - BKSP
   - INT3
-  - {t: TAB, h: Fn}
+  - BKSP
+  - {t: TAB, h: JIS}
   - Q
   - W
   - E
@@ -29,7 +29,7 @@ layers:
   - P
   - LBKT
   - RBKT
-  - {t: BSLH, h: BT}
+  - {t: ENTER, h: BT}
   - CAPS
   - A
   - S
@@ -42,7 +42,7 @@ layers:
   - L
   - SEMI
   - SQT
-  - ENTER
+  - BSLH
   - LSHFT
   - Z
   - X
@@ -65,7 +65,7 @@ layers:
   - LEFT
   - DOWN
   - RIGHT
-  Fn:
+  JIS:
   - CAPS
   - '1'
   - {t: '2', s: LBKT}
@@ -79,9 +79,9 @@ layers:
   - {t: '0', s: Sft+9}
   - {t: MINUS, s: Sft+INT RO}
   - {t: Sft+MINUS, s: COLON}
-  - BKSP
   - INT3
-  - {t: TAB, h: Fn}
+  - BKSP
+  - {t: TAB, h: JIS}
   - Q
   - W
   - E
@@ -94,7 +94,7 @@ layers:
   - P
   - {t: RBKT, s: Sft+RBRC}
   - {t: BSLH, s: Sft+BSLH}
-  - {t: INT3, h: BT}
+  - {t: ENTER, h: BT}
   - CAPS
   - A
   - S
@@ -107,7 +107,7 @@ layers:
   - L
   - {t: SEMI, s: SQT}
   - {t: Sft+7, s: Sft+2}
-  - ENTER
+  - BSLH
   - LSHFT
   - Z
   - X
