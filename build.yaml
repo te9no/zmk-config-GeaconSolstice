@@ -8,7 +8,7 @@ include:
     snippet: zmk-usb-logging studio-rpc-usb-uart
 
   - board: seeeduino_xiao_ble
-    shield: Solstice_L rgbled_adapter
+    shield: Solstice_L rgbled_adapter dongle_display
     snippet: zmk-usb-logging studio-rpc-usb-uart
     cmake-args: -DKEYMAP_FILE=../../config/Solstice_jis.keymap
     artifact-name: Solstice_L_jis
