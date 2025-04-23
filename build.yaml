@@ -10,12 +10,12 @@ include:
   - board: seeeduino_xiao_ble
     shield: Solstice_L rgbled_adapter
     snippet: zmk-usb-logging studio-rpc-usb-uart
-    cmake-args: -DKEYMAP_FILE=../../config/geacon_jis.keymap
+    cmake-args: -DKEYMAP_FILE=../../config/Solstice_jis.keymap
     artifact-name: Solstice_L_jis
   - board: seeeduino_xiao_ble
     shield: Solstice_R rgbled_adapter
     snippet: zmk-usb-logging studio-rpc-usb-uart
-    cmake-args: -DKEYMAP_FILE=../../config/geacon_jis.keymap
+    cmake-args: -DKEYMAP_FILE=../../config/Solstice_jis.keymap
     artifact-name: Solstice_R_jis
 
   - board: seeeduino_xiao_ble
