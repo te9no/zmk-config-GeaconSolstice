@@ -30,7 +30,7 @@ layers:
   - LBKT
   - RBKT
   - {t: ENTER, h: BT}
-  - CAPS
+  - {t: CAPS, h: BT}
   - A
   - S
   - D
