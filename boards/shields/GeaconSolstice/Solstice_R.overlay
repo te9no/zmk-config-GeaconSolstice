@@ -53,8 +53,8 @@
 
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
-        status = "disabled";
-        device = <&trackball_split>;
+        status = "ok";
+        device = <&trackball>;
     };
 };
 
@@ -67,9 +67,9 @@
 	y-input-code = <INPUT_REL_Y>;
 };
 
-&trackball_split {
-    device = <&trackball>;
-};
+// &trackball_split {
+//     device = <&trackball>;
+// };
 
 &xiao_serial { status = "disabled"; };
 &xiao_i2c { status = "disabled"; };
