@@ -1,7 +1,10 @@
 if SHIELD_SOLSTICE_R
     config ZMK_KEYBOARD_NAME
         default "Solstice_R"
-endif
+
+    config ZMK_SPLIT
+        default y
+endif 
 
 if SHIELD_SOLSTICE_L
     config ZMK_KEYBOARD_NAME
@@ -9,7 +12,10 @@ if SHIELD_SOLSTICE_L
 
     config ZMK_SPLIT_ROLE_CENTRAL
         default y
-    
+
+    config ZMK_SPLIT
+        default y
+
     if ZMK_DISPLAY
         config I2C
             default y
@@ -32,9 +38,4 @@ if SHIELD_SOLSTICE_L
             default LV_COLOR_DEPTH_1
         endchoice
     endif # LVGL
-endif
-
-if SHIELD_SOLSTICE_L || SHIELD_SOLSTICE_R
-    config ZMK_SPLIT
-        default y
 endif
