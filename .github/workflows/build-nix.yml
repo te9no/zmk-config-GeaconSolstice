@@ -22,10 +22,7 @@ jobs:
   build:
     uses: urob/zmk-actions/.github/workflows/build-user-config.yml@main
     with:
-      # Optionally choose the toolchain to use: Zephyr SDK (default) or GNU Arm
-      # Embedded ('gnuarmemb'). The latter results in slightly faster builds.
       toolchain: zephyr-full
-      # toolchain: gnuarmemb
       
   upload-firmware:
     needs: build
@@ -37,13 +34,18 @@ jobs:
           fetch-depth: ${{ (inputs.amend_commit == true && 2) || 1 }}
           submodules: recursive
           
-      - name: Remove previous firmware files
+      - name: Get branch name
+        id: branch-name
         run: |
-          pwd
-          mkdir -p firmware
-          ls -la firmware
-          rm -rf firmware/*
-          ls -la firmware
+          BRANCH_NAME=${GITHUB_REF#refs/heads/}
+          echo "branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
+          echo "Branch name is $BRANCH_NAME"
+
+      - name: Prepare firmware directory
+        run: |
+          mkdir -p firmware/${{ steps.branch-name.outputs.branch }}
+          rm -rf firmware/${{ steps.branch-name.outputs.branch }}/*
+          echo "Created directory firmware/${{ steps.branch-name.outputs.branch }}"
 
       - name: Get last commit message
         id: last_commit_message
@@ -53,12 +55,14 @@ jobs:
 
       - name: Download firmware artifacts
         uses: actions/download-artifact@v4
+        with:
+          path: firmware/${{ steps.branch-name.outputs.branch }}
 
       - name: Commit updated images
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          file_pattern: 'firmware/*'
-          commit_message: 'Update firmware files'
+          file_pattern: 'firmware/**/*'
+          commit_message: 'Update firmware files for branch ${{ steps.branch-name.outputs.branch }}'
           commit_options: '--no-verify'
           push_options: '--no-verify'
 
@@ -68,4 +72,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: '${{ inputs.artifact_name }}'
-          path: 'firmware/*'
+          path: 'firmware/${{ steps.branch-name.outputs.branch }}/*'
