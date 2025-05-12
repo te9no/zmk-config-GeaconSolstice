@@ -19,8 +19,10 @@ manifest:
       revision: main
       import: app/west.yml
     - name: zmk-rgbled-widget
-      remote: caksoylar
-      revision: main
+      # remote: caksoylar
+      # revision: main
+      remote: te9no
+      revision: anime
     - name: zmk-pmw3610-driver
       remote: badjeff
       revision: main
