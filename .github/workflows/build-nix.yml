@@ -31,7 +31,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: ${{ (inputs.amend_commit == true && 2) || 1 }}
+          fetch-depth: 0  # 全履歴を取得
           submodules: recursive
           
       - name: Get branch name
@@ -40,6 +40,11 @@ jobs:
           BRANCH_NAME=${GITHUB_REF#refs/heads/}
           echo "branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
           echo "Branch name is $BRANCH_NAME"
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
 
       - name: Prepare firmware directory
         run: |
@@ -58,13 +63,12 @@ jobs:
         with:
           path: firmware/${{ steps.branch-name.outputs.branch }}
 
-      - name: Commit updated images
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          file_pattern: 'firmware/**/*'
-          commit_message: 'Update firmware files for branch ${{ steps.branch-name.outputs.branch }}'
-          commit_options: '--no-verify'
-          push_options: '--no-verify'
+      - name: Commit and push changes
+        run: |
+          git pull origin ${{ steps.branch-name.outputs.branch }} --rebase
+          git add firmware/${{ steps.branch-name.outputs.branch }}/*
+          git commit -m "Update firmware files for branch ${{ steps.branch-name.outputs.branch }}" --no-verify
+          git push origin ${{ steps.branch-name.outputs.branch }} --no-verify
 
       - name: Artifact upload
         id: artifact-upload-step
