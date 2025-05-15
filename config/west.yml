@@ -8,10 +8,12 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: badjeff
       url-base: https://github.com/badjeff
-    - name: te9no
-      url-base: https://github.com/te9no
+    - name: urob
+      url-base: https://github.com/urob
     - name: englmaxi
       url-base: https://github.com/englmaxi
+    - name: te9no
+      url-base: https://github.com/te9no
   projects:
     - name: zmk
       #remote: zmkfirmware
