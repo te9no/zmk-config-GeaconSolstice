@@ -65,6 +65,12 @@ layers:
   - LEFT
   - DOWN
   - RIGHT
+  - '&mF13'
+  - '&mF14'
+  - '&mF15'
+  - '&mF16'
+  - '&mF17'
+  - '&mF18'
   JIS:
   - CAPS
   - '1'
@@ -130,6 +136,12 @@ layers:
   - LEFT
   - DOWN
   - RIGHT
+  - '&mF13'
+  - '&mF14'
+  - '&mF15'
+  - '&mF16'
+  - '&mF17'
+  - '&mF18'
   Fnc:
   - {t: Sft+LBRC, s: Sft+EQUAL}
   - F1
@@ -195,6 +207,12 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - '&mF13'
+  - '&mF14'
+  - '&mF15'
+  - '&mF16'
+  - '&mF17'
+  - '&mF18'
   Mouse:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -260,6 +278,12 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - '&mF13'
+  - '&mF14'
+  - '&mF15'
+  - '&mF16'
+  - '&mF17'
+  - '&mF18'
   Scr:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -325,6 +349,12 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - '&mF13'
+  - '&mF14'
+  - '&mF15'
+  - '&mF16'
+  - '&mF17'
+  - '&mF18'
   BT:
   - BT CLR
   - {t: BT, h: '0'}
@@ -390,3 +420,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - '&mF13'
+  - '&mF14'
+  - '&mF15'
+  - '&mF16'
+  - '&mF17'
+  - '&mF18'
