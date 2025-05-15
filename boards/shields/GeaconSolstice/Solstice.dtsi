@@ -9,7 +9,7 @@
 	default_transform: keymap_transform_0 {
 		compatible = "zmk,matrix-transform";
 		columns = <14>;
-		rows = <7>;
+		rows = <9>;
 		
 		map = <
 		RC(0,6)   RC(1,6)   RC(2,6)   RC(3,6)   RC(4,6)   RC(5,6)       RC(0,14)  RC(1,14)  RC(2,14)  RC(3,14)  RC(4,14)  RC(5,14)  RC(0,13)  RC(1,13) RC(2,13)

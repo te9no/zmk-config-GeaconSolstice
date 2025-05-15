@@ -2,6 +2,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 #include <physical_layouts.dtsi>
 
 #define JIS 1
@@ -10,11 +11,11 @@
 #define BT 5
 
 &mt {
-   flavor = "tap-preferred";
+	flavor = "tap-preferred";
 };
 
 / {
-    chosen {
+	chosen {
 		zmk,physical-layout = &layout_US;
 	};
 	
@@ -23,7 +24,7 @@
 		display-name = "US";
 		transform = <&default_transform>;
 		kscan = <&kscan0>;
-
+		
 		keys//                    w   h    x    y     rot    rx    ry
 		= <&key_physical_attrs 100 100    0    0       0     0     0>
 		, <&key_physical_attrs 100 100  100    0       0     0     0>
@@ -39,6 +40,7 @@
 		, <&key_physical_attrs 100 100 1400    0  (-125)  1450    50>
 		, <&key_physical_attrs 100 100 1500    0       0     0     0>
 		, <&key_physical_attrs 200 100 1600    0       0     0     0>
+		, <&key_physical_attrs 100 100    0  600       0     0     0>
 		, <&key_physical_attrs 150 100    0  100       0     0     0>
 		, <&key_physical_attrs 100 100  150  100     125   200   150>
 		, <&key_physical_attrs 100 100  251  107     625   301   157>
@@ -88,7 +90,13 @@
 		, <&key_physical_attrs 100 100 1550  425       0     0     0>
 		, <&key_physical_attrs 100 100 1650  425       0     0     0>
 		, <&key_physical_attrs 100 100 1750  425       0     0     0>
-		// , <&key_physical_attrs 100 100    0  525       0     0     0>
+		
+		, <&key_physical_attrs 100 100 0     500       0     0     0>
+		, <&key_physical_attrs 100 100 100   500       0     0     0>
+		, <&key_physical_attrs 100 100 200   500       0     0     0>
+		, <&key_physical_attrs 100 100 300   500       0     0     0>
+		, <&key_physical_attrs 100 100 400   500       0     0     0>
+		, <&key_physical_attrs 100 100 500   500       0     0     0>
 		;
 	};
 	
@@ -163,190 +171,258 @@
 		, <&key_physical_attrs 100 100 1550  425       0     0     0>
 		, <&key_physical_attrs 100 100 1650  425       0     0     0>
 		, <&key_physical_attrs 100 100 1750  425       0     0     0>
+
+		, <&key_physical_attrs 100 100 0     500       0     0     0>
+		, <&key_physical_attrs 100 100 100   500       0     0     0>
+		, <&key_physical_attrs 100 100 200   500       0     0     0>
+		, <&key_physical_attrs 100 100 300   500       0     0     0>
+		, <&key_physical_attrs 100 100 400   500       0     0     0>
+		, <&key_physical_attrs 100 100 500   500       0     0     0>
 		;
 	};
 	
 	position_map {
 		compatible = "zmk,physical-layout-position-map";
-		complete;
+		// complete;
 		
 		layout_US {
 			physical-layout = <&layout_US>;
 			positions
-			= < 0  1  2  3  4  5     6  7  8  9 10 11 12 13 63>
-			, <14 15 16 17 18 19    20 21 22 23 24 25 26 27   >
-			, <28 29 30 31 32 33    34 35 36 37 38 39   40    >
-			, <41 42 43 44 45 46    47 48 49 50 51 52   53    >
-			, <54 55 56 57 58       59               60 61 62 >
+			= < 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14>
+			, <15 16 17 18 19 20 21 22 23 24 25 26 27 28   >
+			, <29 30 31 32 33 34 35 36 37 38 39 40    41   >
+			, <42 43 44 45 46 47 48 49 50 51 52 53 54 55   >
+			, <56 57 58 59 60                      61 62 63>
 			;
 		};
 		
 		layout_JIS {
 			physical-layout = <&layout_JIS>;
 			positions
-			= < 0  1  2  3  4  5     6  7  8  9 10 11 12 13 14>
-			, <15 16 17 18 19 20    21 22 23 24 25 26 27 28   >
-			, <29 30 31 32 33 34    35 36 37 38 39 40   41    >
-			, <42 43 44 45 46 47    48 49 50 51 52 53   54    >
-			, <55 56 57 58 59       60               61 62 63 >
+			= < 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14>
+			, <15 16 17 18 19 20 21 22 23 24 25 26 27  28  >
+			, <29 30 31 32 33 34 35 36 37 38 39 40 41      >
+			, <42 43 44 45 46 47 48 49 50 51 52 53 54 55   >
+			, <56 57 58 59 60                      61 62 63>
 			;
 		};
 	};
-
-    behaviors {
-        toJIS: toJIS {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            bindings = <&tog>, <&kp>;
-        };
-        mo2: mo2 {
-            compatible = "zmk,behavior-mod-morph";
+	
+	behaviors {
+		leader1: leader1 {
+            compatible = "zmk,behavior-leader-key";
             #binding-cells = <0>;
-            bindings = <&kp N2>, <&kp LBKT>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            leftdown { sequence = <F14 F15>; bindings = <&kp PG_DN>; };
+            out { sequence = <O U T>; bindings = <&out OUT_TOG>; };
         };
-        mo6: mo6 {
-            compatible = "zmk,behavior-mod-morph";
+        leader2: leader2 {
+            compatible = "zmk,behavior-leader-key";
             #binding-cells = <0>;
-            bindings = <&kp N6>, <&kp EQUAL>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            leftup   { sequence = <F14 F13>; bindings = <&kp PG_UP>; };
         };
-        mo7: mo7 {
-            compatible = "zmk,behavior-mod-morph";
+        leader3: leader3 {
+            compatible = "zmk,behavior-leader-key";
             #binding-cells = <0>;
-            bindings = <&kp N7>, <&kp LS(N6)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            rightdown { sequence = <F17 F18>; bindings = <&kp END>; };
         };
-        mo8: mo8 {
-            compatible = "zmk,behavior-mod-morph";
+        leader4: leader4 {
+            compatible = "zmk,behavior-leader-key";
             #binding-cells = <0>;
-            bindings = <&kp N8>, <&kp LS(SQT)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            rightup   { sequence = <F17 F16>; bindings = <&kp HOME>; };
         };
-        mo9: mo9 {
-            compatible = "zmk,behavior-mod-morph";
+		mF13: mF13 {
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp N9>, <&kp LS(N8)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&macro_tap &kp F13>
+                     , <&leader1>;
         };
-        mo0: mo0 {
-            compatible = "zmk,behavior-mod-morph";
+        mF14: mF14 {
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp N0>, <&kp LS(N9)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&macro_tap &kp F14>;
         };
-        moMINUS: moMINUS {
-            compatible = "zmk,behavior-mod-morph";
+        mF15: mF15 {
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp MINUS>, <&kp LS(INT_RO)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&macro_tap &kp F15>
+                     , <&leader2>;
         };
-        moEQUAL: moEQUAL {
-            compatible = "zmk,behavior-mod-morph";
+        mF16: mF16 {
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(MINUS)>, <&kp COLON>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&macro_tap &kp F16>
+                    , <&leader3>;
         };
-        moLBKT: moLBKT {
-            compatible = "zmk,behavior-mod-morph";
+        mF17: mF17 {
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RBKT>, <&kp LS(RBRC)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&macro_tap &kp F17>;
         };
-        moRBKT: moRBKT {
-            compatible = "zmk,behavior-mod-morph";
+        mF18: mF18 {
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp BSLH>, <&kp LS(BSLH)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&macro_tap &kp F18>
+                    , <&leader4>;
         };
-        moSEMI: moSEMI {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp SEMI>, <&kp SQT>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        moSQT: moSQT {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp LS(N7)>, <&kp LS(N2)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        moGRAVE: moGRAVE {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp LS(LBRC)>, <&kp LS(EQUAL)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-    }; 
- 
-   keymap {
-        compatible = "zmk,keymap";
-        default_layer {
-            label="Def";
-            bindings = <
-&kp CAPS       &kp N1    &kp N2     &kp N3     &kp N4     &kp N5       &kp N6    &kp N7     &kp N8     &kp N9     &kp N0    &kp MINUS  &kp EQUAL      &kp BKSP  &kp INT3
-&toJIS 1 TAB   &kp Q     &kp W      &kp E      &kp R      &kp T        &kp Y     &kp U      &kp I      &kp O      &kp P     &kp LBKT   &kp RBKT       &lt 5 BSLH
-&kp CAPS       &kp A     &kp S      &kp D      &kp F      &kp G        &kp H     &kp J      &kp K      &kp L      &kp SEMI  &kp SQT                   &kp ENTER
-&kp LSHFT      &kp Z     &kp X      &kp C      &kp V      &kp B        &kp N     &kp M      &kp COMMA  &kp DOT    &kp FSLH  &kp RSHFT                 &kp UP
-&mt LCTL ESC   &kp LGUI  &kp LALT   &kp SPACE  &lt 2 SPACE             &lt 2 SPACE                                                           &kp LEFT &kp DOWN &kp RIGHT
->;
-       };
-
-        jis_layer {
-            label="Fn";
-            bindings = <
-&kp CAPS       &kp N1    &mo2       &kp N3     &kp N4     &kp N5       &mo6      &mo7       &mo8       &mo9       &mo0      &moMINUS   &moEQUAL        &kp BKSP  &kp INT3
-&toJIS 1 TAB   &kp Q     &kp W      &kp E      &kp R      &kp T        &kp Y     &kp U      &kp I      &kp O      &kp P     &moLBKT    &moRBKT         &lt 5 INT3
-&kp CAPS       &kp A     &kp S      &kp D      &kp F      &kp G        &kp H     &kp J      &kp K      &kp L      &moSEMI   &moSQT                     &kp ENTER
-&kp LSHFT      &kp Z     &kp X      &kp C      &kp V      &kp B        &kp N     &kp M      &kp COMMA  &kp DOT    &kp FSLH  &kp RSHFT                  &kp UP
-&mt LCTL ESC   &kp LGUI  &kp LALT   &kp SPACE  &lt 2 SPACE             &lt 2 SPACE                                                        &kp LEFT &kp DOWN &kp RIGHT
->;
-       };
-
-       function_layer {
-        	label="Fnc";
-            bindings = <
-&moGRAVE      &kp F1     &kp F2     &kp F3     &kp F4     &kp F5       &kp F6    &kp F7     &kp F8     &kp F9     &kp F10   &kp F11    &kp F12         &trans   &trans
-&trans        &kp PG_UP  &kp UP     &kp PG_DN  &kp HOME   &trans       &trans    &trans     &trans     &trans     &trans    &trans     &trans          &kp PSCRN
-&trans        &kp LEFT   &kp DOWN   &kp RIGHT  &kp END    &trans       &trans    &trans     &trans     &trans     &trans    &trans                     &trans
-&trans        &kp BKSP   &kp DEL    &trans     &trans     &trans       &trans    &trans     &trans     &trans     &trans    &trans                     &trans
-&trans        &trans     &kp LALT   &kp ENTER  &kp ENTER               &kp ENTER                                                              &trans   &trans   &trans
->;
-       };
-
-       mouse_layer {
-        	label="Mouse";
-            bindings = <
-&trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &trans     &trans    &trans     &trans          &trans   &trans
-&trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &trans     &trans    &trans     &trans          &trans
-&trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &trans     &trans    &trans                     &trans
-&trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &mkp MB1   &mkp MB3  &mkp MB2                   &trans
-&trans        &trans     &trans                &trans     &trans       &trans                                                                 &trans   &trans   &trans
->;
-       };
-
-       scroll_layer {
-        	label="Scr";
-            bindings = <
-&trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &trans     &trans    &trans     &trans          &trans   &trans
-&trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &trans     &trans    &trans     &trans          &trans
-&trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &trans     &trans    &trans                     &trans
-&trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &mkp MB1   &mkp MB3  &mkp MB2                   &trans
-&trans        &trans     &trans                &trans     &trans       &trans                                                                 &trans   &trans   &trans
->;
-       };
-
-        bt_layer {
-        	label="BT";
-            bindings = <
-&bt BT_CLR     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4  &trans   &trans   &trans   &trans   &trans  &trans    &trans          &trans   &trans
-&bt BT_CLR_ALL &trans       &trans       &trans       &trans       &trans        &trans   &trans   &trans   &trans   &trans  &trans    &trans          &trans
-&trans         &trans       &trans       &trans       &trans       &trans        &trans   &trans   &trans   &trans   &trans  &trans                    &trans
-&trans         &trans       &trans       &trans       &trans       &trans        &trans   &trans   &trans   &trans   &trans  &trans                    &trans
-&trans         &trans       &trans       &trans       &trans                     &trans                                                       &trans   &trans   &trans
->;
-        };
-    };
+		toJIS: toJIS {
+			compatible = "zmk,behavior-hold-tap";
+			#binding-cells = <2>;
+			tapping-term-ms = <200>;
+			quick-tap-ms = <0>;
+			bindings = <&tog>, <&kp>;
+		};
+		mo2: mo2 {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp N2>, <&kp LBKT>;
+			mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
+		mo6: mo6 {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp N6>, <&kp EQUAL>;
+			mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
+		mo7: mo7 {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp N7>, <&kp LS(N6)>;
+			mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
+		mo8: mo8 {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp N8>, <&kp LS(SQT)>;
+			mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
+		mo9: mo9 {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp N9>, <&kp LS(N8)>;
+			mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
+		mo0: mo0 {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp N0>, <&kp LS(N9)>;
+			mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
+		moMINUS: moMINUS {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp MINUS>, <&kp LS(INT_RO)>;
+			mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
+		moEQUAL: moEQUAL {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp LS(MINUS)>, <&kp COLON>;
+			mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
+		moLBKT: moLBKT {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp RBKT>, <&kp LS(RBRC)>;
+			mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
+		moRBKT: moRBKT {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp BSLH>, <&kp LS(BSLH)>;
+			mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
+		moSEMI: moSEMI {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp SEMI>, <&kp SQT>;
+			mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
+		moSQT: moSQT {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp LS(N7)>, <&kp LS(N2)>;
+			mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
+		moGRAVE: moGRAVE {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp LS(LBRC)>, <&kp LS(EQUAL)>;
+			mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
+	};
+	
+	keymap {
+		compatible = "zmk,keymap";
+		default_layer {
+			label="Def";
+			bindings = <
+			&kp CAPS       &kp N1    &kp N2     &kp N3     &kp N4     &kp N5       &kp N6    &kp N7     &kp N8     &kp N9     &kp N0    &kp MINUS  &kp EQUAL      &kp BKSP  &kp INT3
+			&toJIS 1 TAB   &kp Q     &kp W      &kp E      &kp R      &kp T        &kp Y     &kp U      &kp I      &kp O      &kp P     &kp LBKT   &kp RBKT       &lt 5 BSLH
+			&lt 5 CAPS     &kp A     &kp S      &kp D      &kp F      &kp G        &kp H     &kp J      &kp K      &kp L      &kp SEMI  &kp SQT                   &kp ENTER
+			&kp LSHFT      &kp Z     &kp X      &kp C      &kp V      &kp B        &kp N     &kp M      &kp COMMA  &kp DOT    &kp FSLH  &kp RSHFT                 &kp UP
+			&mt LCTL ESC   &kp LGUI  &kp LALT   &kp SPACE  &lt 2 SPACE             &lt 2 SPACE                                                           &kp LEFT &kp DOWN &kp RIGHT
+			&mF13            &mF14            &mF15            &mF16            &mF17            &mF18
+			>;
+		};
+		
+		jis_layer {
+			label="JIS";
+			bindings = <
+			&kp CAPS       &kp N1    &mo2       &kp N3     &kp N4     &kp N5       &mo6      &mo7       &mo8       &mo9       &mo0      &moMINUS   &moEQUAL        &kp BKSP  &kp INT3
+			&toJIS 1 TAB   &kp Q     &kp W      &kp E      &kp R      &kp T        &kp Y     &kp U      &kp I      &kp O      &kp P     &moLBKT    &moRBKT         &lt 5 INT3
+			&kp CAPS       &kp A     &kp S      &kp D      &kp F      &kp G        &kp H     &kp J      &kp K      &kp L      &moSEMI   &moSQT                     &kp ENTER
+			&kp LSHFT      &kp Z     &kp X      &kp C      &kp V      &kp B        &kp N     &kp M      &kp COMMA  &kp DOT    &kp FSLH  &kp RSHFT                  &kp UP
+			&mt LCTL ESC   &kp LGUI  &kp LALT   &kp SPACE  &lt 2 SPACE             &lt 2 SPACE                                                        &kp LEFT &kp DOWN &kp RIGHT
+			&mF13            &mF14            &mF15            &mF16            &mF17            &mF18
+			>;
+		};
+		
+		function_layer {
+			label="Fnc";
+			bindings = <
+			&moGRAVE      &kp F1     &kp F2     &kp F3     &kp F4     &kp F5       &kp F6    &kp F7     &kp F8     &kp F9     &kp F10   &kp F11    &kp F12         &trans   &trans
+			&trans        &kp PG_UP  &kp UP     &kp PG_DN  &kp HOME   &trans       &trans    &trans     &trans     &trans     &trans    &trans     &trans          &kp PSCRN
+			&trans        &kp LEFT   &kp DOWN   &kp RIGHT  &kp END    &trans       &trans    &trans     &trans     &trans     &trans    &trans                     &trans
+			&trans        &kp BKSP   &kp DEL    &trans     &trans     &trans       &trans    &trans     &trans     &trans     &trans    &trans                     &trans
+			&trans        &trans     &kp LALT   &kp ENTER  &kp ENTER               &kp ENTER                                                              &trans   &trans   &trans
+			&mF13            &mF14            &mF15            &mF16            &mF17            &mF18
+			>;
+		};
+		
+		mouse_layer {
+			label="Mouse";
+			bindings = <
+			&trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &trans     &trans    &trans     &trans          &trans   &trans
+			&trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &trans     &trans    &trans     &trans          &trans
+			&trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &trans     &trans    &trans                     &trans
+			&trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &mkp MB1   &mkp MB3  &mkp MB2                   &trans
+			&trans        &trans     &trans                &trans     &trans       &trans                                                                 &trans   &trans   &trans
+			&mF13            &mF14            &mF15            &mF16            &mF17            &mF18
+			>;
+		};
+		
+		scroll_layer {
+			label="Scr";
+			bindings = <
+			&trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &trans     &trans    &trans     &trans          &trans   &trans
+			&trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &trans     &trans    &trans     &trans          &trans
+			&trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &trans     &trans    &trans                     &trans
+			&trans        &trans     &trans     &trans     &trans     &trans       &trans    &trans     &trans     &mkp MB1   &mkp MB3  &mkp MB2                   &trans
+			&trans        &trans     &trans                &trans     &trans       &trans                                                                 &trans   &trans   &trans
+			&mF13            &mF14            &mF15            &mF16            &mF17            &mF18
+			>;
+		};
+		
+		bt_layer {
+			label="BT";
+			bindings = <
+			&bt BT_CLR     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4  &trans   &trans   &trans   &trans   &trans  &trans    &trans          &trans   &trans
+			&bt BT_CLR_ALL &trans       &trans       &trans       &trans       &trans        &trans   &trans   &trans   &trans   &trans  &trans    &trans          &trans
+			&trans         &trans       &trans       &trans       &trans       &trans        &trans   &trans   &trans   &trans   &trans  &trans                    &trans
+			&trans         &trans       &trans       &trans       &trans       &trans        &trans   &trans   &trans   &trans   &trans  &trans                    &trans
+			&trans         &trans       &trans       &trans       &trans                     &trans                                                       &trans   &trans   &trans
+			&mF13            &mF14            &mF15            &mF16            &mF17            &mF18
+			>;
+		};
+	};
 };
