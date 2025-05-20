@@ -45,7 +45,23 @@
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&anin0>;
-        input-processors = <&zip_xy_to_scroll_mapper>;
+        #input-processors = <&zip_xy_to_scroll_mapper>;
+        input-processors = <&fusion_view_mapper>;
+
+    };
+
+    fusion_view_mapper {
+        compatible = "zmk,input-mapper-xy";
+        status = "okay";
+
+        x-code = <INPUT_REL_RX>;
+        y-code = <INPUT_REL_RY>;
+        
+        shift {
+            layers = <1>;
+            x-code = <INPUT_REL_X>;
+            y-code = <INPUT_REL_Y>;
+        };
     };
 
     split_inputs {
