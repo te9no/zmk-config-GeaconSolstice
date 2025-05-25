@@ -25,7 +25,7 @@
         snippets = [ "zmk-usb-logging" ];
         enableZmkStudio = true;
         
-        zephyrDepsHash = "sha256-GlvNN0mAhfWtH/v4Smo9rZPucbTSRJX9LZL+5ve4G5k=";
+        zephyrDepsHash = "sha256-FAMrQwsCZirazvYnOb+3xbI96RQer5FawkDQnBcA/Zk=";
 
         meta = {
           description = "ZMK firmware";
