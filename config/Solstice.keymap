@@ -228,7 +228,9 @@
         leader4: leader4 {
             compatible = "zmk,behavior-leader-key";
             #binding-cells = <0>;
-            rightup   { sequence = <F17 F16>; bindings = <&kp HOME>; };
+            // rightup   { sequence = <F17 F16>; bindings = <&kp HOME>; };
+            rightup   { sequence = <F17 F16>; bindings = <&macro_press &kp LGUI>, <&macro_tap &kp D>, <&macro_release &kp LGUI>; };
+			
         };
 		mF13: mF13 {
             compatible = "zmk,behavior-macro";
