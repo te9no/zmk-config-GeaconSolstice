@@ -207,6 +207,7 @@
 			;
 		};
 	};
+
 	macros {
 		win_d_macro: win_d_macro {
 			compatible = "zmk,behavior-macro";
@@ -215,6 +216,7 @@
 			bindings = <&macro_press &kp LGUI>, <&macro_tap &kp D>, <&macro_release &kp LGUI>;
 		};
 	};
+	
 	behaviors {
 		leader1: leader1 {
             compatible = "zmk,behavior-leader-key";
