@@ -15,6 +15,7 @@
             kscan = <&kscan1>;
         };
         direct {
+            row-offset = <8>;
             kscan = <&kscan2>;
         };
     };
