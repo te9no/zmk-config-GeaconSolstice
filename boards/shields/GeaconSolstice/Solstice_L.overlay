@@ -91,7 +91,7 @@
         status = "okay";
         // input-processors = <&zip_report_rate_limit 8>, <&zip_temp_layer 3 700>;
 
-        scroll {
+        scroll1 {
             layers = <0>;
             input-processors = <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
         };
