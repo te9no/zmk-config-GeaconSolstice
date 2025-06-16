@@ -45,7 +45,6 @@
     zip_keybind_keys: zip_keybind_keys {
         compatible = "zmk,input-processor-keybind";
         #input-processor-cells = <0>;
-        track_remainders;
         bindings = <&kp RIGHT>,
                    <&kp LEFT>,
                    <&kp UP>,
@@ -56,13 +55,19 @@
         tap-ms = <10>;
     };
 
+    zip_none: zip_none {
+        compatible = "zmk,input-processor-behaviors";
+        #input-processor-cells = <0>;
+        codes    = <INPUT_REL_X>;
+        bindings = <&kp LC(V)  >;
+    };
     analog_input_listener {
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&anin0>;
         arrow {
             layers = <2>;
-            input-processors = <&zip_keybind_keys>;
+            input-processors = <&zip_keybind_keys>, <&zip_none> ;
         };
         scroll {
             layers = <1>;
