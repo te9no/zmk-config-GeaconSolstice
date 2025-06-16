@@ -76,7 +76,7 @@
         compatible = "zmk,input-listener";
         device = <&anin0>;
         scroll {
-            layers = <5>;
+            layers = <0>;
             input-processors = <&zip_xy_to_scroll_mapper>;
         };
         arrow {
