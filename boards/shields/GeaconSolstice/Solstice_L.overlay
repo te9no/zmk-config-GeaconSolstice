@@ -71,7 +71,7 @@
         input-processors = <&zip_xy_to_scroll_mapper>;
         arrow {
             layers = <2>;
-            input-processors  = <&zip_none>, <&zip_keybind_keys>;
+            input-processors  = <&zip_keybind_keys>, <&zip_none>;
         };
     };
 
@@ -89,7 +89,7 @@
         compatible = "zmk,input-listener";
         device = <&trackball_split>;
         status = "okay";
-        input-processors = <&zip_report_rate_limit 16>, <&zip_temp_layer 3 700>;
+        input-processors = <&zip_report_rate_limit 8>, <&zip_temp_layer 3 700>;
 
         scroll {
             layers = <2>;
