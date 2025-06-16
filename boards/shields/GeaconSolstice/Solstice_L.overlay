@@ -62,6 +62,14 @@
         map = <INPUT_REL_Y  INPUT_REL_Z>
             , <INPUT_REL_X  INPUT_REL_Z>;
     };
+
+    zip_none2: zip_none2 {
+        compatible = "zmk,input-processor-transform";
+        #input-processor-cells = <1>;
+        type = <INPUT_EV_REL>;
+        y-codes = <INPUT_REL_Z>;
+        x-codes = <INPUT_REL_Z>;
+    };
     
     analog_input_listener {
         status = "okay";
@@ -71,7 +79,7 @@
         arrow {
             layers = <2>;
             // input-processors = <&zip_none>, <&zip_keybind_keys>;
-            input-processors = <&zip_keybind_keys>, <&zip_none>;
+            input-processors = <&zip_keybind_keys>, <&zip_none2>;
         };
     };
 
