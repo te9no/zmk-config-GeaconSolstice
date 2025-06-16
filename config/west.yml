@@ -12,6 +12,8 @@ manifest:
       url-base: https://github.com/te9no
     - name: englmaxi
       url-base: https://github.com/englmaxi
+    - name: kot149
+      url-base: https://github.com/kot149
   projects:
     - name: zmk
       #remote: zmkfirmware
@@ -31,6 +33,9 @@ manifest:
     - name: zmk-dongle-display
       remote: te9no
       revision: main
+    - name: zmk-layout-shift
+      remote: kot149
+      revision: v1
       # remote: englmaxi
       # revision: main
   self:
