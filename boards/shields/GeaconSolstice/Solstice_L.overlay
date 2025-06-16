@@ -89,8 +89,12 @@
         compatible = "zmk,input-listener";
         device = <&trackball_split>;
         status = "okay";
-        input-processors = <&zip_report_rate_limit 8>, <&zip_temp_layer 3 700>;
+        // input-processors = <&zip_report_rate_limit 8>, <&zip_temp_layer 3 700>;
 
+        scroll {
+            layers = <0>;
+            input-processors = <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
+        };
         scroll {
             layers = <2>;
             input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
