@@ -60,8 +60,8 @@
         compatible = "zmk,input-processor-code-mapper";
         #input-processor-cells = <0>;
         type = <INPUT_EV_REL>;
-        map = <INPUT_REL_Y  INPUT_KEY_A>
-            , <INPUT_REL_X  INPUT_KEY_B>;
+        map = <INPUT_REL_Y  INPUT_REL_Z>
+            , <INPUT_REL_X  INPUT_REL_Z>;
     };
     
     analog_input_listener {
@@ -71,7 +71,8 @@
         input-processors = <&zip_xy_to_scroll_mapper>;
         arrow {
             layers = <2>;
-            input-processors = <&zip_none>, <&zip_keybind_keys>;
+            // input-processors = <&zip_none>, <&zip_keybind_keys>;
+            input-processors = <&zip_keybind_keys>, <&zip_none>;
         };
     };
 
