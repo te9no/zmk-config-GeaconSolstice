@@ -79,7 +79,7 @@
         arrow {
             layers = <2>;
             // input-processors = <&zip_none>, <&zip_keybind_keys>;
-            input-processors = <&zip_keybind_keys>, <&zip_none2>;
+            input-processors = <&zip_keybind_keys>, <&zip_none2 INPUT_TRANSFORM_XY_SWAP>;
         };
     };
 
