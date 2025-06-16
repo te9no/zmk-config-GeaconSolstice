@@ -65,7 +65,7 @@
             input-processors = <&zip_keybind_keys>;
         };
         scroll {
-            layers = <0>;
+            layers = <1>;
             input-processors = <&zip_xy_to_scroll_mapper>;
         };
     };
@@ -91,7 +91,7 @@
     status = "okay";
     input-processors = <&zip_temp_layer 3 700>;
     scroll {
-        layers = <5>;
+        layers = <1>;
         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
     };
     scroll1 {
