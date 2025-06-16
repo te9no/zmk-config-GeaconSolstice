@@ -3,20 +3,20 @@ layers:
   Def:
   - CAPS
   - '1'
-  - '2'
+  - '&kpls N2'
   - '3'
   - '4'
   - '5'
-  - '6'
-  - '7'
-  - '8'
-  - '9'
-  - '0'
-  - MINUS
-  - EQUAL
+  - '&kpls N6'
+  - '&kpls N7'
+  - '&kpls N8'
+  - '&kpls N9'
+  - '&kpls N0'
+  - '&kpls MINUS'
+  - '&kpls EQUAL'
   - BKSP
   - INT3
-  - {t: TAB, h: JIS}
+  - '&toJIS TAB'
   - Q
   - W
   - E
@@ -27,8 +27,8 @@ layers:
   - I
   - O
   - P
-  - LBKT
-  - RBKT
+  - '&kpls LBK'
+  - '&kpls RB'
   - {t: BSLH, h: BT}
   - {t: CAPS, h: BT}
   - A
@@ -40,8 +40,8 @@ layers:
   - J
   - K
   - L
-  - SEMI
-  - SQT
+  - '&kpls SEMI'
+  - '&kpls SQT'
   - ENTER
   - LSHFT
   - Z
@@ -81,7 +81,7 @@ layers:
   - {t: Sft+MINUS, s: COLON}
   - BKSP
   - INT3
-  - {t: TAB, h: JIS}
+  - {t: TAB, h: '&tog_ls 1'}
   - Q
   - W
   - E
