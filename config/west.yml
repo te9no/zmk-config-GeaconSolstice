@@ -31,6 +31,9 @@ manifest:
     - name: zmk-dongle-display
       remote: te9no
       revision: main
+    - name: zmk-input-processor-report-rate-limit
+      remote: badjeff
+      revision: main
       # remote: englmaxi
       # revision: main
   self:
