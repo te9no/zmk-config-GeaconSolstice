@@ -37,7 +37,8 @@ manifest:
       remote: badjeff
       revision: main
     - name: zmk-input-processor-keybind
-      remote: zettaface
+      # remote: zettaface
+      remote: te9no
       revision: main
       # remote: englmaxi
       # revision: main
