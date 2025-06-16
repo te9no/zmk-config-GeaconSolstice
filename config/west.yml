@@ -12,6 +12,8 @@ manifest:
       url-base: https://github.com/te9no
     - name: englmaxi
       url-base: https://github.com/englmaxi
+    - name: zettaface
+      url-base: https://github.com/zettaface
   projects:
     - name: zmk
       #remote: zmkfirmware
