@@ -75,7 +75,10 @@
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&anin0>;
-        input-processors = <&zip_xy_to_scroll_mapper>;
+        scroll {
+            layers = <0>;
+            input-processors = <&zip_xy_to_scroll_mapper>;
+        };
         arrow {
             layers = <2>;
             // input-processors = <&zip_none>, <&zip_keybind_keys>;
@@ -106,7 +109,8 @@
 
     scroll1 {
         layers = <5>;
-        input-processors = <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
+        input-processors = <&zip_keybind_keys>, <&zip_none2 INPUT_TRANSFORM_XY_SWAP>;
+
     };
     scroll {
         layers = <2>;
