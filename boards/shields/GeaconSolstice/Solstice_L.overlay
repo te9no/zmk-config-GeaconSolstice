@@ -50,6 +50,7 @@
                    <&kp LEFT>,
                    <&kp UP>,
                    <&kp DOWN>;
+        mode = <1>;
         tick = <40>;
         wait-ms = <0>;
         tap-ms = <10>;
