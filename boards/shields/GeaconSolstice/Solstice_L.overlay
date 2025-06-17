@@ -71,7 +71,7 @@
             input-processors = <&zip_keybind_keys>;
         };
         scroll {
-            layers = <1>;
+            layers = <0>;
             input-processors = <&zip_xy_to_scroll_mapper>;
         };
     };
@@ -101,7 +101,7 @@
         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
     };
     scroll1 {
-        layers = <2>;
+        layers = <5>;
         input-processors = <&zip_keybind_keys>;
     };
 };
