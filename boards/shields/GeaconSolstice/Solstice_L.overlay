@@ -55,12 +55,6 @@
         tap-ms = <10>;
     };
 
-    zip_none: zip_none {
-        compatible = "zmk,input-processor-behaviors";
-        #input-processor-cells = <0>;
-        codes    = <INPUT_REL_X>;
-        bindings = <&kp LC(V)  >;
-    };
     analog_input_listener {
         status = "okay";
         compatible = "zmk,input-listener";
@@ -69,7 +63,14 @@
             layers = <2>;
             // input-processors = <&zip_keybind_keys>, <&zip_none> ;
             input-processors = <&zip_keybind_keys>;
+            process-next;
         };
+        
+        arrow-prevent-moce {
+            layers = <2>;
+            input-processors = <&zip_xy_sxcaler 0 1>;
+        };
+
         scroll {
             layers = <0>;
             input-processors = <&zip_xy_to_scroll_mapper>;
@@ -100,9 +101,16 @@
         layers = <2>;
         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
     };
-    scroll1 {
+    
+    arrow {
         layers = <5>;
         input-processors = <&zip_keybind_keys>;
+        process-next;
+    };
+    
+    arrow-prevent-move {
+        layers = <5>;
+        input-processors = <&zip_xy_scaler 0 1>;
     };
 };
 
