@@ -60,7 +60,6 @@
         device = <&anin0>;
         arrow {
             layers = <2>;
-            // input-processors = <&zip_keybind_keys>, <&zip_none> ;
             input-processors = <&zip_keybind_keys>;
             process-next;
         };
