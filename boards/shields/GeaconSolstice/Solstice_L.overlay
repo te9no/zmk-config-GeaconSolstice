@@ -5,7 +5,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include "Solstice_pinctrl_L.dtsi"
 #include "Solstice.dtsi"
-#include <input/processors/input-processor-keytoggle.dtsi>
 
 &adc {
 	status = "okay";
@@ -90,6 +89,12 @@
         compatible = "zmk,input-listener";
         status = "disabled";
         device = <&trackball_split>;
+    };
+
+    zip_keytoggle: zip_keytoggle {
+        compatible = "zmk,input-processor-keytoggle";
+        #input-processor-cells = <0>;
+        bindings = <&kp LS(MCLK)>;
     };
 };
 
