@@ -96,6 +96,8 @@
         compatible = "zmk,input-processor-keytoggle";
         #input-processor-cells = <0>;
         bindings = <&kp LS(MCLK)>;
+        tap-ms = <30>;
+        wait-ms = <15>;
     };
 };
 
