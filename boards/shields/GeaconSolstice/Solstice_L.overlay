@@ -5,7 +5,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include "Solstice_pinctrl_L.dtsi"
 #include "Solstice.dtsi"
-#include <dts/input/processors/input-processor-keytoggle.dtsi>
+#include <input/processors/input-processor-keytoggle.dtsi>
 
 &adc {
 	status = "okay";
