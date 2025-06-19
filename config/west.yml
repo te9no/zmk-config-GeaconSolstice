@@ -39,8 +39,5 @@ manifest:
       remote: zettaface
       # remote: te9no
       revision: main
-    - name: zmk-input-processor-keytoggle
-      remote: te9no
-      revision: main
   self:
     path: config
