@@ -35,12 +35,12 @@ manifest:
       revision: main
       # remote: englmaxi
       # revision: main
-    - name: zmk-input-processor-report-rate-limit
-      remote: badjeff
-      revision: main
     - name: zmk-input-processor-keybind
       remote: zettaface
       # remote: te9no
+      revision: main
+    - name: zmk-input-processor-keytoggle
+      remote: te9no
       revision: main
   self:
     path: config

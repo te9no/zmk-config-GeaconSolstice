@@ -102,14 +102,14 @@
     
     arrow {
         layers = <5>;
-        input-processors = <&zip_keybind_keys>;
+        input-processors = <&zip_keytoggle>;
         process-next;
     };
     
-    arrow-prevent-move {
-        layers = <5>;
-        input-processors = <&zip_xy_scaler 0 1>;
-    };
+    // arrow-prevent-move {
+    //     layers = <5>;
+    //     input-processors = <&zip_xy_scaler 0 1>;
+    // };
 };
 
 &kscan0 {
