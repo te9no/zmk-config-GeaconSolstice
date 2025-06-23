@@ -45,5 +45,6 @@ manifest:
       # remote: kot149
       remote: te9no
       revision: v1
+
   self:
     path: config
