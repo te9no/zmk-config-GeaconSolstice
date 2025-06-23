@@ -42,7 +42,8 @@ manifest:
       # remote: te9no
       revision: main
     - name: zmk-layout-shift
-      remote: kot149
+      # remote: kot149
+      remote: te9no
       revision: v1
   self:
     path: config
