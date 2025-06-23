@@ -14,6 +14,8 @@ manifest:
       url-base: https://github.com/englmaxi
     - name: zettaface
       url-base: https://github.com/zettaface
+    - name: kot149
+      url-base: https://github.com/kot149
   projects:
     - name: zmk
       #remote: zmkfirmware
@@ -39,5 +41,8 @@ manifest:
       remote: zettaface
       # remote: te9no
       revision: main
+    - name: zmk-layout-shift
+      remote: kot149
+      revision: v1
   self:
     path: config
