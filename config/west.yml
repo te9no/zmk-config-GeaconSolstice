@@ -28,7 +28,6 @@ manifest:
       revision: main
     - name: zmk-analog-input-driver
       remote: badjeff
-      #remote: te9no
       revision: main
     - name: zmk-leader-key
       remote: urob
@@ -36,7 +35,5 @@ manifest:
     - name: zmk-dongle-display
       remote: te9no
       revision: main
-      # remote: englmaxi
-      # revision: main
   self:
     path: config
