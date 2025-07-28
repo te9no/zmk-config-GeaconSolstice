@@ -30,20 +30,16 @@ manifest:
       revision: main
     - name: zmk-analog-input-driver
       remote: badjeff
-      #remote: te9no
       revision: main
     - name: zmk-dongle-display
       remote: te9no
       revision: main
-      # remote: englmaxi
-      # revision: main
     - name: zmk-input-processor-keybind
       remote: zettaface
       # remote: te9no
       revision: main
     - name: zmk-layout-shift
-      # remote: kot149
-      remote: te9no
+      remote: kot149
       revision: v1
 
   self:
