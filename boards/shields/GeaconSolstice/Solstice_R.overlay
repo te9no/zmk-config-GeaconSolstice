@@ -35,7 +35,11 @@
         compatible = "pixart,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        irq-gpios = <&xiao_d 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        cpi = <800>;
+        evt-type = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
         force-awake;
         force-awake-4ms-mode;
     };
@@ -49,6 +53,7 @@
 
         trackball_split: trackball_split@0 {
             compatible = "zmk,input-split";
+            device = <&trackball>;
             reg = <0>;
         };
     };
@@ -62,15 +67,6 @@
 
 &trackball {
     status = "okay";
-	irq-gpios = <&xiao_d 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-	cpi = <800>;
-	evt-type = <INPUT_EV_REL>;
-	x-input-code = <INPUT_REL_X>;
-	y-input-code = <INPUT_REL_Y>;
-};
-
-&trackball_split {
-    device = <&trackball>;
 };
 
 &xiao_serial { status = "disabled"; };
