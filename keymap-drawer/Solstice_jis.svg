@@ -468,7 +468,7 @@ path.combo { stroke: #7f7f7f; }
 <g transform="translate(868, 29)" class="key keypos-12">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.0em">Sft+</tspan><tspan x="0" dy="1.2em">MINUS</tspan>
+<tspan x="0" dy="-0.3em">Sft+</tspan><tspan x="0" dy="1.2em">MINUS</tspan>
 </text>
 <text x="0" y="-24" class="key shifted">COLON</text>
 </g>
@@ -697,7 +697,7 @@ path.combo { stroke: #7f7f7f; }
 <g transform="translate(28, 29)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.0em">Sft+</tspan><tspan x="0" dy="1.2em">LBRC</tspan>
+<tspan x="0" dy="-0.3em">Sft+</tspan><tspan x="0" dy="1.2em">LBRC</tspan>
 </text>
 <text x="0" y="-24" class="key shifted"><tspan style="font-size: 78%">Sft+EQUAL</tspan></text>
 </g>
