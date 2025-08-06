@@ -2,8 +2,6 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    # Additional modules containing boards/shields/custom code can be listed here as well
-    # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
     - name: caksoylar
       url-base: https://github.com/caksoylar
     - name: badjeff
@@ -18,8 +16,7 @@ manifest:
       url-base: https://github.com/kot149
   projects:
     - name: zmk
-      #remote: zmkfirmware
-      remote: te9no
+      remote: zmkfirmware
       revision: main
       import: app/west.yml
     - name: zmk-rgbled-widget

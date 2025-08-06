@@ -31,11 +31,17 @@
     compatible = "nordic,nrf-spim";
 
     trackball: pd@0 {
-        status = "disabled";
+        status = "okay";
         compatible = "pixart,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
+        cpi = <600>;
+        evt-type = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
         irq-gpios = <&gpio0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        force-awake;
+        force-awake-4ms-mode;
     };
 };
 
@@ -56,15 +62,6 @@
         status = "disabled";
         device = <&trackball_split>;
     };
-};
-
-&trackball {
-    status = "okay";
-	irq-gpios = <&xiao_d 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-	cpi = <800>;
-	evt-type = <INPUT_EV_REL>;
-	x-input-code = <INPUT_REL_X>;
-	y-input-code = <INPUT_REL_Y>;
 };
 
 &trackball_split {
