@@ -16,9 +16,9 @@ manifest:
       url-base: https://github.com/kot149
   projects:
     - name: zmk
-      remote: zmkfirmware
-      # revision: main
+      # remote: zmkfirmware
       remote: te9no
+      revision: main
       import: app/west.yml
     - name: zmk-rgbled-widget
       remote: caksoylar
