@@ -36,6 +36,8 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        force-awake;
+        force-awake-4ms-mode;
     };
 };
 
