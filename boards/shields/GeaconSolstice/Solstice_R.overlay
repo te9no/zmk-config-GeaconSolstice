@@ -45,7 +45,6 @@
     };
 };
 
-/*input-split*/
 / {
     split_inputs {
         #address-cells = <1>;

@@ -88,27 +88,24 @@
 
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
+        status = "okay";
         device = <&trackball_split>;
-    };
-};
-
-&trackball_listener {
-    status = "okay";
-    input-processors = <&zip_temp_layer 3 700>;
-    scroll {
-        layers = <2>;
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
-    };
-    
-    arrow {
-        layers = <5>;
-        input-processors = <&zip_keybind_keys>;
-        process-next;
-    };
-    
-    arrow-prevent-move {
-        layers = <5>;
-        input-processors = <&zip_xy_scaler 0 1>;
+        input-processors = <&zip_temp_layer 3 700>;
+        scroll {
+            layers = <2>;
+            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
+        };
+        
+        arrow {
+            layers = <5>;
+            input-processors = <&zip_keybind_keys>;
+            process-next;
+        };
+        
+        arrow-prevent-move {
+            layers = <5>;
+            input-processors = <&zip_xy_scaler 0 1>;
+        };
     };
 };
 
