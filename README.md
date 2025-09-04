@@ -14,10 +14,10 @@
 ・トラックボール、OLED、アナログスティック搭載  
 
 ### US配列
-![](keymap-drawer/Solstice.svg)
+![](keymap-drawer/Solstice_US.svg)
 
 ### JIS配列
-![](keymap-drawer/Solstice_jis.svg)
+![](keymap-drawer/Solstice_JIS.svg)
 
 
 ## 販売
