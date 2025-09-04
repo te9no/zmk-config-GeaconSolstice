@@ -1,22 +1,26 @@
 ---
 include:
   - board: seeeduino_xiao_ble
-    shield: Solstice_L rgbled_adapter dongle_display
+    shield: Solstice_US Solstice_L rgbled_adapter dongle_display
     snippet: zmk-usb-logging studio-rpc-usb-uart
-  - board: seeeduino_xiao_ble
-    shield: Solstice_R rgbled_adapter
-    snippet: zmk-usb-logging studio-rpc-usb-uart
+    artifact-name: Solstice_L_US
 
   - board: seeeduino_xiao_ble
-    shield: Solstice_L rgbled_adapter dongle_display
+    shield: Solstice_US Solstice_R rgbled_adapter
     snippet: zmk-usb-logging studio-rpc-usb-uart
-    cmake-args: -DKEYMAP_FILE=../../config/Solstice_jis.keymap
-    artifact-name: Solstice_L_jis
+    artifact-name: Solstice_R_US
+
   - board: seeeduino_xiao_ble
-    shield: Solstice_R rgbled_adapter
+    shield: Solstice_JIS Solstice_L rgbled_adapter dongle_display
     snippet: zmk-usb-logging studio-rpc-usb-uart
-    cmake-args: -DKEYMAP_FILE=../../config/Solstice_jis.keymap
-    artifact-name: Solstice_R_jis
+    cmake-args: -DKEYMAP_FILE=../../config/Solstice_JIS.keymap
+    artifact-name: Solstice_L_JIS
+
+  - board: seeeduino_xiao_ble
+    shield: Solstice_JIS Solstice_R rgbled_adapter
+    snippet: zmk-usb-logging studio-rpc-usb-uart
+    cmake-args: -DKEYMAP_FILE=../../config/Solstice_JIS.keymap
+    artifact-name: Solstice_R_JIS
 
   - board: seeeduino_xiao_ble
     shield: settings_reset

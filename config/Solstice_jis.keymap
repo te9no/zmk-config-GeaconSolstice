@@ -4,9 +4,9 @@
 #include <dt-bindings/zmk/bt.h>
 #include <physical_layouts.dtsi>
 
-#define MOUSE 3
-#define SCROLL 4
-#define BT 5
+#define MOUSE 2
+#define SCROLL 3
+#define BT 4
 
 &mt {
 	flavor = "tap-preferred";
@@ -105,95 +105,6 @@
 			, <56 57 58 59 60                      61 62 63>
 			;
 		};
-	};
-	
-	behaviors {
-		toJIS: toJIS {
-			compatible = "zmk,behavior-hold-tap";
-			#binding-cells = <2>;
-			tapping-term-ms = <200>;
-			quick-tap-ms = <0>;
-			bindings = <&tog>, <&kp>;
-		};
-		mo2: mo2 {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&kp N2>, <&kp LBKT>;
-			mods = <(MOD_LSFT|MOD_RSFT)>;
-		};
-		mo6: mo6 {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&kp N6>, <&kp EQUAL>;
-			mods = <(MOD_LSFT|MOD_RSFT)>;
-		};
-		mo7: mo7 {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&kp N7>, <&kp LS(N6)>;
-			mods = <(MOD_LSFT|MOD_RSFT)>;
-		};
-		mo8: mo8 {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&kp N8>, <&kp LS(SQT)>;
-			mods = <(MOD_LSFT|MOD_RSFT)>;
-		};
-		mo9: mo9 {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&kp N9>, <&kp LS(N8)>;
-			mods = <(MOD_LSFT|MOD_RSFT)>;
-		};
-		mo0: mo0 {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&kp N0>, <&kp LS(N9)>;
-			mods = <(MOD_LSFT|MOD_RSFT)>;
-		};
-		moMINUS: moMINUS {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&kp MINUS>, <&kp LS(INT_RO)>;
-			mods = <(MOD_LSFT|MOD_RSFT)>;
-		};
-		moEQUAL: moEQUAL {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&kp LS(MINUS)>, <&kp COLON>;
-			mods = <(MOD_LSFT|MOD_RSFT)>;
-		};
-		moLBKT: moLBKT {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&kp RBKT>, <&kp LS(RBRC)>;
-			mods = <(MOD_LSFT|MOD_RSFT)>;
-		};
-		moRBKT: moRBKT {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&kp BSLH>, <&kp LS(BSLH)>;
-			mods = <(MOD_LSFT|MOD_RSFT)>;
-		};
-		moSEMI: moSEMI {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&kp SEMI>, <&kp SQT>;
-			mods = <(MOD_LSFT|MOD_RSFT)>;
-		};
-		moSQT: moSQT {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&kp LS(N7)>, <&kp LS(N2)>;
-			mods = <(MOD_LSFT|MOD_RSFT)>;
-		};
-		moGRAVE: moGRAVE {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&kp LS(LBRC)>, <&kp LS(EQUAL)>;
-			mods = <(MOD_LSFT|MOD_RSFT)>;
-		};
-	};
 	
 	keymap {
 		compatible = "zmk,keymap";
@@ -201,28 +112,17 @@
 			label="Def";
 			bindings = <
 			&kp CAPS       &kp N1    &kp N2     &kp N3     &kp N4     &kp N5       &kp N6    &kp N7     &kp N8     &kp N9     &kp N0    &kp MINUS  &kp EQUAL      &kp INT3  &kp BKSP
-			&toJIS 1 TAB   &kp Q     &kp W      &kp E      &kp R      &kp T        &kp Y     &kp U      &kp I      &kp O      &kp P     &kp LBKT   &kp RBKT       &lt 5 ENTER
-			&lt 5 CAPS     &kp A     &kp S      &kp D      &kp F      &kp G        &kp H     &kp J      &kp K      &kp L      &kp SEMI  &kp SQT                   &kp BSLH
+			&kp TAB        &kp Q     &kp W      &kp E      &kp R      &kp T        &kp Y     &kp U      &kp I      &kp O      &kp P     &kp LBKT   &kp RBKT       &lt 4 ENTER
+			&lt 4 CAPS     &kp A     &kp S      &kp D      &kp F      &kp G        &kp H     &kp J      &kp K      &kp L      &kp SEMI  &kp SQT                   &kp BSLH
 			&kp LSHFT      &kp Z     &kp X      &kp C      &kp V      &kp B        &kp N     &kp M      &kp COMMA  &kp DOT    &kp FSLH  &kp INT1                  &kp UP
-			&mt LCTL ESC   &kp LGUI  &kp LALT   &kp SPACE  &lt 2 SPACE             &lt 2 SPACE                                                           &kp LEFT &kp DOWN &kp RIGHT
-			>;
-		};
-		
-		jis_layer {
-			label="JIS";
-			bindings = <
-			&kp CAPS       &kp N1    &mo2       &kp N3     &kp N4     &kp N5       &mo6      &mo7       &mo8       &mo9       &mo0      &moMINUS   &moEQUAL        &kp INT3  &kp BKSP
-			&toJIS 1 TAB   &kp Q     &kp W      &kp E      &kp R      &kp T        &kp Y     &kp U      &kp I      &kp O      &kp P     &moLBKT    &moRBKT         &lt 5 ENTER
-			&kp CAPS       &kp A     &kp S      &kp D      &kp F      &kp G        &kp H     &kp J      &kp K      &kp L      &moSEMI   &moSQT                     &kp BSLH
-			&kp LSHFT      &kp Z     &kp X      &kp C      &kp V      &kp B        &kp N     &kp M      &kp COMMA  &kp DOT    &kp FSLH  &kp INT1                   &kp UP
-			&mt LCTL ESC   &kp LGUI  &kp LALT   &kp SPACE  &lt 2 SPACE             &lt 2 SPACE                                                        &kp LEFT &kp DOWN &kp RIGHT
+			&mt LCTL ESC   &kp LGUI  &kp LALT   &kp SPACE  &lt 1 SPACE             &lt 1 SPACE                                                           &kp LEFT &kp DOWN &kp RIGHT
 			>;
 		};
 		
 		function_layer {
 			label="Fnc";
 			bindings = <
-			&moGRAVE      &kp F1     &kp F2     &kp F3     &kp F4     &kp F5       &kp F6    &kp F7     &kp F8     &kp F9     &kp F10   &kp F11    &kp F12         &trans   &trans
+			&GRAVE        &kp F1     &kp F2     &kp F3     &kp F4     &kp F5       &kp F6    &kp F7     &kp F8     &kp F9     &kp F10   &kp F11    &kp F12         &trans   &trans
 			&trans        &kp PG_UP  &kp UP     &kp PG_DN  &kp HOME   &trans       &trans    &trans     &trans     &trans     &trans    &trans     &trans          &kp PSCRN
 			&trans        &kp LEFT   &kp DOWN   &kp RIGHT  &kp END    &trans       &trans    &trans     &trans     &trans     &trans    &trans                     &trans
 			&trans        &kp BKSP   &kp DEL    &trans     &trans     &trans       &trans    &trans     &trans     &trans     &trans    &trans                     &trans

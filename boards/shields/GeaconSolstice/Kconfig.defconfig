@@ -1,4 +1,4 @@
-if SHIELD_SOLSTICE_R
+if SHIELD_SOLSTICE_R_*
     config ZMK_KEYBOARD_NAME
         default "Solstice_R"
 
@@ -6,7 +6,7 @@ if SHIELD_SOLSTICE_R
         default y
 endif 
 
-if SHIELD_SOLSTICE_L
+if SHIELD_SOLSTICE_L_*
     config ZMK_KEYBOARD_NAME
         default "Solstice_L"
 
