@@ -1,4 +1,4 @@
-layout: {zmk_keyboard: Solstice_jis}
+layout: {zmk_keyboard: Solstice_JIS}
 layers:
   Def:
   - CAPS
