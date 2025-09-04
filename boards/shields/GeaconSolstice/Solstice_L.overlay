@@ -18,7 +18,7 @@
     anin0: analog_input_0 {
         compatible = "zmk,analog-input";
         sampling-hz = <100>;
-        y-ch {
+        x-ch {
             io-channels = <&adc 2>;
             mv-mid = <1600>;
             mv-min-max = <1600>;
@@ -29,7 +29,7 @@
             evt-type = <INPUT_EV_REL>;
             input-code = <INPUT_REL_X>;
         };
-        x-ch {
+        y-ch {
             io-channels = <&adc 3>;
             mv-mid = <1600>;
             mv-min-max = <1600>;
@@ -64,7 +64,7 @@
             process-next;
         };
         
-        arrow-prevent-moce {
+        arrow-prevent-move {
             layers = <2>;
             input-processors = <&zip_xy_scaler 0 1>;
         };
