@@ -1,11 +1,11 @@
-config SHIELD_SOLSTICE_R_JIS
-    def_bool $(shields_list_contains,Solstice_R_JIS)
+config SHIELD_SOLSTICE_R
+    def_bool $(shields_list_contains,Solstice_R)
 
-config SHIELD_SOLSTICE_R_US
-    def_bool $(shields_list_contains,Solstice_R_US)
+config SHIELD_SOLSTICE_L
+    def_bool $(shields_list_contains,Solstice_L)
 
-config SHIELD_SOLSTICE_L_JIS
-    def_bool $(shields_list_contains,Solstice_L_JIS)
+config SHIELD_SOLSTICE_US
+    def_bool $(shields_list_contains,Solstice_US)
 
-config SHIELD_SOLSTICE_L_US
-    def_bool $(shields_list_contains,Solstice_L_US)
+config SHIELD_SOLSTICE_JIS
+    def_bool $(shields_list_contains,Solstice_JIS)

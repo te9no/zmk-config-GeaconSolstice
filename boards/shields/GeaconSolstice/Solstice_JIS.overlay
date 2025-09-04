@@ -1,5 +1,6 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <behaviors/rgbled_widget.dtsi>
+#include <physical_layouts.dtsi>
 
 / {
 	chosen {
@@ -66,6 +67,7 @@
 		, <&key_physical_attrs 100 100 1500    0       0     0     0>
 		, <&key_physical_attrs 100 100 1600    0       0     0     0>
 		, <&key_physical_attrs 100 100 1700    0       0     0     0>
+		, <&key_physical_attrs 100 100    0  600       0     0     0>
 		, <&key_physical_attrs 150 100    0  100       0     0     0>
 		, <&key_physical_attrs 100 100  150  100     125   200   150>
 		, <&key_physical_attrs 100 100  251  107     625   301   157>
