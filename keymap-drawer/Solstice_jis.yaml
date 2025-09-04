@@ -1,4 +1,4 @@
-layout: {zmk_keyboard: Solstice_jis, layout_name: layout_JIS}
+layout: {zmk_keyboard: Solstice_jis}
 layers:
   Def:
   - CAPS
@@ -16,7 +16,7 @@ layers:
   - EQUAL
   - INT3
   - BKSP
-  - {t: TAB, h: JIS}
+  - TAB
   - Q
   - W
   - E
@@ -65,73 +65,8 @@ layers:
   - LEFT
   - DOWN
   - RIGHT
-  JIS:
-  - CAPS
-  - '1'
-  - {t: '2', s: LBKT}
-  - '3'
-  - '4'
-  - '5'
-  - {t: '6', s: EQUAL}
-  - {t: '7', s: Sft+6}
-  - {t: '8', s: Sft+SQT}
-  - {t: '9', s: Sft+8}
-  - {t: '0', s: Sft+9}
-  - {t: MINUS, s: Sft+INT RO}
-  - {t: Sft+MINUS, s: COLON}
-  - INT3
-  - BKSP
-  - {t: TAB, h: JIS}
-  - Q
-  - W
-  - E
-  - R
-  - T
-  - Y
-  - U
-  - I
-  - O
-  - P
-  - {t: RBKT, s: Sft+RBRC}
-  - {t: BSLH, s: Sft+BSLH}
-  - {t: ENTER, h: BT}
-  - CAPS
-  - A
-  - S
-  - D
-  - F
-  - G
-  - H
-  - J
-  - K
-  - L
-  - {t: SEMI, s: SQT}
-  - {t: Sft+7, s: Sft+2}
-  - BSLH
-  - LSHFT
-  - Z
-  - X
-  - C
-  - V
-  - B
-  - N
-  - M
-  - COMMA
-  - DOT
-  - FSLH
-  - INT1
-  - UP
-  - {t: ESC, h: LCTL}
-  - LGUI
-  - LALT
-  - SPACE
-  - {t: SPACE, h: Fnc}
-  - {t: SPACE, h: Fnc}
-  - LEFT
-  - DOWN
-  - RIGHT
   Fnc:
-  - {t: Sft+LBRC, s: Sft+EQUAL}
+  - GRAVE
   - F1
   - F2
   - F3
