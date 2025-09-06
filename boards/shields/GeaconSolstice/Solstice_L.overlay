@@ -106,20 +106,20 @@
             input-processors = <&zip_xy_scaler 0 1>;
         };
     };
-};
 
-&kscan0 {
-    compatible = "zmk,kscan-gpio-charlieplex";
-    interrupt-gpios = <&xiao_d 1 (GPIO_ACTIVE_LOW)>;
-    gpios
-        = <&xiao_d 6 (GPIO_ACTIVE_LOW)>
-        , <&xiao_d 7 (GPIO_ACTIVE_LOW)>
-        , <&xiao_d 8 (GPIO_ACTIVE_LOW)>
-        , <&xiao_d 9 (GPIO_ACTIVE_LOW)>
-        , <&xiao_d 10 (GPIO_ACTIVE_LOW)>
-        , <&gpio0 9 GPIO_ACTIVE_LOW>
-        , <&gpio0 10 GPIO_ACTIVE_LOW>
-        ;
+    kscan0: kscan0 {
+        compatible = "zmk,kscan-gpio-charlieplex";
+        interrupt-gpios = <&xiao_d 1 (GPIO_ACTIVE_LOW)>;
+        gpios
+            = <&xiao_d 6 (GPIO_ACTIVE_LOW)>
+            , <&xiao_d 7 (GPIO_ACTIVE_LOW)>
+            , <&xiao_d 8 (GPIO_ACTIVE_LOW)>
+            , <&xiao_d 9 (GPIO_ACTIVE_LOW)>
+            , <&xiao_d 10 (GPIO_ACTIVE_LOW)>
+            , <&gpio0 9 GPIO_ACTIVE_LOW>
+            , <&gpio0 10 GPIO_ACTIVE_LOW>
+            ;
+    };
 };
 
 &xiao_i2c {

@@ -6,10 +6,6 @@
 	chosen {
 		zmk,physical-layout = &layout_US;
 	};
-
-	kscan0: kscan {
-		compatible = "zmk,kscan-gpio-charlieplex";
-	};
 	
 	default_transform: keymap_transform_0 {
 		compatible = "zmk,matrix-transform";

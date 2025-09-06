@@ -14,6 +14,8 @@ manifest:
       url-base: https://github.com/zettaface
     - name: kot149
       url-base: https://github.com/kot149
+    - name: prospector
+      url-base: https://github.com/t-ogura
   projects:
     - name: zmk
       # remote: zmkfirmware
@@ -39,6 +41,9 @@ manifest:
     - name: zmk-layout-shift
       remote: kot149
       revision: v1
-
+    - name: prospector-zmk-module
+      remote: prospector
+      revision: v1.1.1
+      path: modules/prospector-zmk-module
   self:
     path: config
