@@ -18,8 +18,8 @@ manifest:
       url-base: https://github.com/t-ogura
   projects:
     - name: zmk
-      # remote: zmkfirmware
-      remote: te9no
+      remote: zmkfirmware
+      # remote: te9no
       revision: main
       import: app/west.yml
     - name: zmk-rgbled-widget
@@ -41,9 +41,9 @@ manifest:
     - name: zmk-layout-shift
       remote: kot149
       revision: v1
-    - name: prospector-zmk-module
-      remote: prospector
-      revision: v1.1.1
-      path: modules/prospector-zmk-module
+    # - name: prospector-zmk-module
+    #   remote: prospector
+    #   revision: v1.1.1
+    #   path: modules/prospector-zmk-module
   self:
     path: config
