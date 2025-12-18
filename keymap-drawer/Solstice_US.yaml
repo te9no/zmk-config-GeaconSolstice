@@ -54,7 +54,7 @@ layers:
   - DOT
   - FSLH
   - RSHFT
-  - UP
+  - {t: UP, h: Scr}
   - {t: ESC, h: LCTL}
   - LGUI
   - LALT
@@ -246,7 +246,7 @@ layers:
   - '&mkp MB1'
   - '&mkp MB3'
   - '&mkp MB2'
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
