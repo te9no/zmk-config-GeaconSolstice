@@ -27,7 +27,7 @@ manifest:
       revision: main
     - name: zmk-pmw3610-driver
       remote: badjeff
-      revision: main
+      revision: zmk-0.3
     - name: zmk-analog-input-driver
       remote: badjeff
       revision: main
