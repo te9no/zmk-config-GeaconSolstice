@@ -91,19 +91,19 @@
         status = "okay";
         device = <&trackball_split>;
         // input-processors = <&zip_temp_layer 3 700>;
-        input-processors = <&my_rip1>;
+        input-processors = <&mouse_runtime_input_processor &scroll_runtime_input_processor>;
 
         scroll {
             layers = <1>;
             // input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
             input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, 
                                <&zip_xy_to_scroll_mapper>, 
-                               <&my_rip1>;
+                               <&scroll_runtime_input_processor>;
         };
         
         arrow {
             layers = <4>;
-            input-processors = <&my_rip1>,
+            input-processors = <&mouse_runtime_input_processor>
                                <&zip_keybind_keys>;
             process-next;
         };
@@ -127,37 +127,6 @@
             , <&gpio0 10 GPIO_ACTIVE_LOW>
             ;
     };
-    
-    my_rip1: my_rip1 {
-		compatible = "zmk,input-processor-runtime";
-		processor-label = "custom";
-		type = <INPUT_EV_REL>;
-		x-codes = <INPUT_REL_X>;
-		y-codes = <INPUT_REL_Y>;
-		scale-multiplier = <1>;
-		scale-divisor = <1>;
-		rotation-degrees = <0>;
-		track-remainders;
-
-		// Optional: Temp-layer layer default settings
-		// temp-layer-enabled;  // Enable temp-layer by default
-		// temp-layer = <1>;  // Default to layer 1
-		// temp-layer-activation-delay-ms = <100>;  // 100ms activation delay
-		// temp-layer-deactivation-delay-ms = <500>;  // 500ms deactivation delay
-
-		// Optional: Active layers configuration
-		// Bitmask of layers where processor should be active (0 = all layers)
-		// Each bit represents a layer: bit 0 = layer 0, bit 1 = layer 1, etc.
-		// Example: active-layers = <0x00000003> activates on layers 0 and 1 only
-		active-layers = <0>;  // Default: active on all layers
-
-		// Optional: Performance optimization
-		// temp-layer-transparent-behavior = <&trans>;
-		// temp-layer-kp-behavior = <&kp>;
-		// temp-layer-keep-keycodes = <LEFT_CONTROL LEFT_SHIFT LEFT_ALT LEFT_GUI RIGHT_CONTROL RIGHT_SHIFT RIGHT_ALT RIGHT_GUI>;
-
-		#input-processor-cells = <0>;
-	};
 };
 
 &xiao_i2c {
