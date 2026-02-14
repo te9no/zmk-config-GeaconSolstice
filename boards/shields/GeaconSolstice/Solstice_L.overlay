@@ -103,7 +103,7 @@
         
         arrow {
             layers = <4>;
-            input-processors = <&mouse_runtime_input_processor>
+            input-processors = <&mouse_runtime_input_processor>,
                                <&zip_keybind_keys>;
             process-next;
         };
