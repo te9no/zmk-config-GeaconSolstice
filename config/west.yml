@@ -20,6 +20,7 @@ manifest:
       url-base: https://github.com/cormoran
     - name: efogdev
       url-base: https://github.com/efogdev
+
   projects:
     - name: zmk
       # remote: zmkfirmware
@@ -47,6 +48,9 @@ manifest:
     - name: zmk-layout-shift
       remote: kot149
       revision: v1
+    - name: zmk-input-processor-templayer-withDeadZone
+      remote: te9no
+      revision: main
     # - name: prospector-zmk-module
       # remote: prospector
       # revision: v1.1.1

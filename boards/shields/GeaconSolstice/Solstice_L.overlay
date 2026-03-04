@@ -6,9 +6,14 @@
 #include <dt-bindings/zmk/pointing.h>
 #include "Solstice_pinctrl_L.dtsi"
 #include <input/processors/runtime-input-processor.dtsi>
+#include <input/processors/temp_layer_with_deadzone.dtsi>
 
 &adc {
 	status = "okay";
+};
+
+&zip_temp_layer_with_deadzone {
+    deadzone = <3>;
 };
 
 / {
@@ -91,7 +96,8 @@
         status = "okay";
         device = <&trackball_split>;
         // input-processors = <&zip_temp_layer 3 700>;
-        input-processors = <&mouse_runtime_input_processor &scroll_runtime_input_processor>;
+        input-processors = <&zip_temp_layer_with_deadzone 2 700>,
+                           <&mouse_runtime_input_processor &scroll_runtime_input_processor>;
 
         scroll {
             layers = <1>;
