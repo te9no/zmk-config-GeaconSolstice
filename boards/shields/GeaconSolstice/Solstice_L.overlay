@@ -6,14 +6,9 @@
 #include <dt-bindings/zmk/pointing.h>
 #include "Solstice_pinctrl_L.dtsi"
 #include <input/processors/runtime-input-processor.dtsi>
-#include <input/processors/temp_layer_with_deadzone.dtsi>
 
 &adc {
 	status = "okay";
-};
-
-&zip_temp_layer_with_deadzone {
-    deadzone = <3>;
 };
 
 / {
@@ -60,6 +55,27 @@
         tap-ms = <10>;
     };
 
+    zip_temp_layer_threshold: zip_temp_layer_threshold {
+        compatible = "zmk,input-processor-temp-layer-threshold";
+        #input-processor-cells = <2>;
+        
+        // Cumulative movement required before activation
+        // AML発動に必要な累積移動量
+        threshold = <15>;
+        
+        // Key positions that won't deactivate the layer
+        // 以下で指定したキー以外を押すとAML解除
+        // excluded-positions = <18 19 20>;
+        
+        // Don't activate if key was pressed within this time
+        // キー入力から300ms間はAMLを発動しない
+        require-prior-idle-ms = <300>;
+        
+        // Reset accumulated movement after this timeout
+        // 蓄積された移動量をリセットするまでの時間
+        reset-timeout-ms = <200>;
+    };
+
     analog_input_listener {
         status = "okay";
         compatible = "zmk,input-listener";
@@ -96,7 +112,7 @@
         status = "okay";
         device = <&trackball_split>;
         // input-processors = <&zip_temp_layer 3 700>;
-        input-processors = <&zip_temp_layer_with_deadzone 2 700>,
+        input-processors = <&zip_temp_layer_threshold  2 700>,
                            <&mouse_runtime_input_processor &scroll_runtime_input_processor>;
 
         scroll {
