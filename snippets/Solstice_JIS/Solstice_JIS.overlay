@@ -11,10 +11,7 @@
 		compatible = "zmk,matrix-transform";
 		columns = <15>;
 		rows = <7>;
-#if CONFIG_SHIELD_SOLSTICE_R
-		col-offset = <8>;
-#endif
-		
+
 		map = <
 		RC(0,6)   RC(1,6)   RC(2,6)   RC(3,6)   RC(4,6)   RC(5,6)       RC(0,14)  RC(1,14)  RC(2,14)  RC(3,14)  RC(4,14)  RC(5,14)  RC(0,13)  RC(1,13) RC(2,13)
 		RC(0,5)   RC(1,5)   RC(2,5)   RC(3,5)   RC(4,5)   RC(6,5)       RC(3,13)  RC(4,13)  RC(6,13)  RC(0,12)  RC(1,12)  RC(2,12)  RC(3,12)  RC(5,12)

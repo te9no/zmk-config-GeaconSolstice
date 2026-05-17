@@ -7,7 +7,7 @@ include:
 
   - board: seeeduino_xiao_ble
     shield: Solstice_R rgbled_adapter
-    snippet: zmk-usb-logging studio-rpc-usb-uart Solstice_US
+    snippet: zmk-usb-logging studio-rpc-usb-uart Solstice_US Solstice_R_Offset
     artifact-name: Solstice_R_US
 
   - board: seeeduino_xiao_ble
@@ -17,7 +17,7 @@ include:
 
   - board: seeeduino_xiao_ble
     shield: Solstice_R rgbled_adapter
-    snippet: zmk-usb-logging studio-rpc-usb-uart Solstice_JIS
+    snippet: zmk-usb-logging studio-rpc-usb-uart Solstice_JIS Solstice_R_Offset
     artifact-name: Solstice_R_JIS
 
   - board: seeeduino_xiao_ble
