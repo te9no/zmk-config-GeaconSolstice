@@ -42,7 +42,7 @@ manifest:
     - name: zmk-module-analoginput-rpc
       remote: te9no
       revision: main
-    - name: zmk-dongle-display
+    - name: zmk-module-oled-rpc
       remote: te9no
       revision: main
     - name: zmk-input-processor-keybind

@@ -1,7 +1,7 @@
 ---
 include:
   - board: seeeduino_xiao_ble
-    shield: Solstice_L rgbled_adapter dongle_display
+    shield: Solstice_L rgbled_adapter dya_oled_status
     snippet: zmk-usb-logging studio-rpc-usb-uart Solstice_US
     artifact-name: Solstice_L_US
 
@@ -11,7 +11,7 @@ include:
     artifact-name: Solstice_R_US
 
   - board: seeeduino_xiao_ble
-    shield: Solstice_L rgbled_adapter dongle_display
+    shield: Solstice_L rgbled_adapter dya_oled_status
     snippet: zmk-usb-logging studio-rpc-usb-uart Solstice_JIS
     artifact-name: Solstice_L_JIS
 
