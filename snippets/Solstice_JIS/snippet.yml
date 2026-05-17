@@ -1,0 +1,4 @@
+name: Solstice_JIS
+append:
+  EXTRA_CONF_FILE: Solstice_JIS.conf
+  EXTRA_DTC_OVERLAY_FILE: Solstice_JIS.overlay

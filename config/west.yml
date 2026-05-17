@@ -16,34 +16,63 @@ manifest:
       url-base: https://github.com/kot149
     - name: prospector
       url-base: https://github.com/t-ogura
+    - name: cormoran
+      url-base: https://github.com/cormoran
+    - name: efogdev
+      url-base: https://github.com/efogdev
+    - name: yamaryu211
+      url-base: https://github.com/yamaryu211
   projects:
     - name: zmk
       # remote: zmkfirmware
       remote: te9no
-      revision: main
+      revision: v0.3-branch+dya
       import: app/west.yml
     - name: zmk-rgbled-widget
       remote: caksoylar
-      revision: main
+      revision: v0.3
     - name: zmk-pmw3610-driver
-      remote: badjeff
-      revision: zmk-0.3
+      remote: efogdev
+      # remote: badjeff
+      revision: main
+      # revision: zmk-0.3
     - name: zmk-analog-input-driver
       remote: badjeff
+      revision: main
+    - name: zmk-module-analoginput-rpc
+      remote: te9no
       revision: main
     - name: zmk-dongle-display
       remote: te9no
       revision: main
     - name: zmk-input-processor-keybind
-      remote: zettaface
+      remote: te9no
       # remote: te9no
       revision: main
     - name: zmk-layout-shift
       remote: kot149
       revision: v1
-    - name: prospector-zmk-module
-      remote: prospector
-      revision: v1.1.1
-      path: modules/prospector-zmk-module
+    - name: zmk-input-processor-temp-layer-threshold
+      remote: yamaryu211
+      revision: main
+    # - name: prospector-zmk-module
+      # remote: prospector
+      # revision: v1.1.1
+      # path: modules/prospector-zmk-module
+    - name: zmk-module-runtime-input-processor
+      remote: cormoran
+      revision: main
+    - name: zmk-module-battery-history
+      remote: cormoran
+      revision: main
+    - name: zmk-module-ble-management
+      remote: cormoran
+      revision: main
+    - name: zmk-module-settings-rpc
+      remote: cormoran
+      revision: main
+    - name: zmk-feature-module-physical-layout
+      remote: cormoran
+      revision: main
   self:
     path: config

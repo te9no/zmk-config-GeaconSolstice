@@ -5,6 +5,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 #include "Solstice_pinctrl_L.dtsi"
+#include <input/processors/runtime-input-processor.dtsi>
 
 &adc {
 	status = "okay";
@@ -16,27 +17,36 @@
     };
     
     anin0: analog_input_0 {
-        compatible = "zmk,analog-input";
+        compatible = "dya,analog-input";
         sampling-hz = <100>;
+        report-interval-ms = <8>;
         y-ch {
+            label = "X Axis";
             io-channels = <&adc 2>;
             mv-mid = <1600>;
             mv-min-max = <1600>;
             mv-deadzone = <88>;
             scale-multiplier = <1>;
-            scale-divisor = <800>;
+            scale-divisor = <1>;
+            output-min = <0>;
+            output-max = <24>;
             invert;
+            response-curve = <2>;
             evt-type = <INPUT_EV_REL>;
             input-code = <INPUT_REL_X>;
         };
         x-ch {
+            label = "Y Axis";
             io-channels = <&adc 3>;
             mv-mid = <1600>;
             mv-min-max = <1600>;
             mv-deadzone = <88>;
             scale-multiplier = <1>;
-            scale-divisor = <800>;
+            scale-divisor = <1>;
+            output-min = <0>;
+            output-max = <24>;
             invert;
+            response-curve = <2>;
             evt-type = <INPUT_EV_REL>;
             input-code = <INPUT_REL_Y>;
         };
@@ -54,25 +64,46 @@
         tap-ms = <10>;
     };
 
+    zip_temp_layer_threshold: zip_temp_layer_threshold {
+        compatible = "zmk,input-processor-temp-layer-threshold";
+        #input-processor-cells = <2>;
+        
+        // Cumulative movement required before activation
+        // AML発動に必要な累積移動量
+        threshold = <15>;
+        
+        // Key positions that won't deactivate the layer
+        // 以下で指定したキー以外を押すとAML解除
+        // excluded-positions = <18 19 20>;
+        
+        // Don't activate if key was pressed within this time
+        // キー入力から300ms間はAMLを発動しない
+        require-prior-idle-ms = <300>;
+        
+        // Reset accumulated movement after this timeout
+        // 蓄積された移動量をリセットするまでの時間
+        reset-timeout-ms = <200>;
+    };
+
     analog_input_listener {
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&anin0>;
-        arrow {
-            layers = <1>;
-            input-processors = <&zip_keybind_keys>;
-            process-next;
-        };
-        
-        arrow-prevent-move {
-            layers = <1>;
-            input-processors = <&zip_xy_scaler 0 1>;
-        };
 
-        scroll {
-            layers = <0>;
-            input-processors = <&zip_xy_to_scroll_mapper>;
-        };
+        input-processors = <&zip_xy_to_scroll_mapper &scroll_runtime_input_processor>;
+
+        // input-processors = <&zip_xy_to_scroll_mapper>;
+        
+        // arrow {
+        //     layers = <1>;
+        //     input-processors = <&zip_keybind_keys>;
+        //     process-next;
+        // };
+        
+        // arrow-prevent-move {
+        //     layers = <1>;
+        //     input-processors = <&zip_xy_scaler 0 1>;
+        // };
     };
 
     split_inputs {
@@ -90,14 +121,21 @@
         status = "okay";
         device = <&trackball_split>;
         // input-processors = <&zip_temp_layer 3 700>;
+        input-processors = <&zip_temp_layer_threshold  2 700>,
+                           <&mouse_runtime_input_processor &scroll_runtime_input_processor>;
+
         scroll {
             layers = <1>;
-            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
+            // input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
+            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, 
+                               <&zip_xy_to_scroll_mapper>, 
+                               <&scroll_runtime_input_processor>;
         };
         
         arrow {
             layers = <4>;
-            input-processors = <&zip_keybind_keys>;
+            input-processors = <&mouse_runtime_input_processor>,
+                               <&zip_keybind_keys>;
             process-next;
         };
         
