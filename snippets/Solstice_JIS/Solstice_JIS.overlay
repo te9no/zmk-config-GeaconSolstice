@@ -136,10 +136,10 @@
 		compatible = "zmk,physical-layout-custom-module";
 		display-name = "Analog Stick";
 		type = "analog-stick";
-		width = <140>;
-		height = <140>;
-		x = <710>;
-		y = <320>;
+		width = <100>;
+		height = <100>;
+		x = <670>;
+		y = <460>;
 		linked-device-identifiers = "analog_input_0";
 		linked-subsystems = "dya__studio";
 	};
@@ -147,9 +147,9 @@
 	trackball_layout: trackball_layout {
 		compatible = "zmk,physical-layout-trackball";
 		display-name = "Trackball";
-		size = <150>;
-		x = <790>;
-		y = <320>;
+		size = <200>;
+		x = <1300>;
+		y = <400>;
 		linked-device-identifiers = "trackball";
 		linked-subsystems = "zmk__trackball";
 	};
@@ -160,8 +160,8 @@
 		type = "display";
 		width = <220>;
 		height = <70>;
-		x = <670>;
-		y = <35>;
+		x = <10>;
+		y = <0>;
 		linked-device-identifiers = "oled";
 		linked-subsystems = "zmk__display";
 	};

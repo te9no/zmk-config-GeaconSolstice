@@ -3,8 +3,14 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - "config/*"
+      - "config/*.keymap"
+      - "config/*.json"
+      - "boards/**/*.dtsi"
+      - "boards/**/*.overlay"
+      - "snippets/**/*.overlay"
       - "keymap-drawer/config.yaml"
+      - "scripts/generate_physical_layout_svg.py"
+      - ".github/workflows/draw-keymap.yml"
 
 jobs:
   draw:
@@ -21,4 +27,44 @@ jobs:
       output_folder: keymap-drawer
       destination: "both"
       parse_args: ""  # map of extra args to pass to `keymap parse`, e.g. "corne:'-l Def Lwr Rse' cradio:''"
-      draw_args: "Solstice:'-j config/Solstice.json'"
+      draw_args: "SAA:'-j config/SAA.json'"
+
+  draw-keymap-svg:
+    needs: draw
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Draw keymap-svg keymaps
+        run: |
+          set -euo pipefail
+          mkdir -p keymap-svg
+
+          for keymap in config/*.keymap; do
+            name="$(basename "$keymap" .keymap)"
+            dtsi_file="$(find . -path ./.git -prune -o -type f \( -name "$name.dtsi" -o -name "$name.overlay" \) -print | sort | head -n 1)"
+
+            if [[ -z "$dtsi_file" ]]; then
+              echo "Physical layout source not found for $name" >&2
+              exit 1
+            fi
+
+            echo "Drawing keymap-svg keymap for $name from $dtsi_file..."
+            python3 scripts/generate_physical_layout_svg.py \
+              "$dtsi_file" "keymap-svg/$name.svg" \
+              --layout "layout_$name" \
+              --keymap "$keymap"
+          done
+
+      - name: Commit keymap-svg SVGs
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          file_pattern: keymap-svg/*.svg
+          commit_message: "[Draw keymap-svg] ${{ github.event.head_commit.message || 'manual run' }}"
+          commit_options: "--no-verify"
+          push_options: "--no-verify"
