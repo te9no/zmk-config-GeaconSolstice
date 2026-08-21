@@ -22,4 +22,5 @@ include:
 
   - board: xiao_ble//zmk
     shield: settings_reset
+    artifact-name: settings_reset
     

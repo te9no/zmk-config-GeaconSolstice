@@ -4,7 +4,9 @@ on:
     paths:
       - config/**
       - boards/**
+      - snippets/**
       - build.yaml
+      - .github/workflows/build.yml
  
 jobs:
   build:
