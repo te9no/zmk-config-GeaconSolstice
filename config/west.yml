@@ -48,8 +48,8 @@ manifest:
       remote: kot149
       revision: 4d71f7cb743256ac619873dd44f510e9e9562739
     - name: zmk-input-processor-temp-layer-threshold
-      remote: yamaryu211
-      revision: e7f39d5a61bc697d4f7e9a28212568fbda81d676
+      remote: te9no
+      revision: 89520778db4401aea543e45c3b52817a0068666d
     # - name: prospector-zmk-module
       # remote: prospector
       # revision: v1.1.1
