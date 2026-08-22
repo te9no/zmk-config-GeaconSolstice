@@ -7,7 +7,7 @@ include:
 
   - board: xiao_ble//zmk
     shield: Solstice_R rgbled_adapter
-    snippet: Solstice_US
+    snippet: zmk-usb-logging cdc-boot Solstice_US
     artifact-name: Solstice_R_US
 
   - board: xiao_ble//zmk
@@ -17,7 +17,7 @@ include:
 
   - board: xiao_ble//zmk
     shield: Solstice_R rgbled_adapter
-    snippet: Solstice_JIS
+    snippet: zmk-usb-logging cdc-boot Solstice_JIS
     artifact-name: Solstice_R_JIS
 
   - board: xiao_ble//zmk
