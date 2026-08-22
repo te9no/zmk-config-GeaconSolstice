@@ -72,6 +72,14 @@ manifest:
     - name: zmk-feature-cdc-acm-bootloader-trigger
       remote: te9no
       revision: 1850754d269aab9ba73e4639371bfe59a4130e65
+    - name: zmk-feature-custom-settings
+      remote: cormoran
+      revision: c6a7fef3a3be3d3ace5de9a4b0628c6418cd1f3f
+      path: zmk-feature-custom-settings
+    - name: zmk-driver-pmw3610-with-custom-studio-rpc
+      remote: cormoran
+      revision: 5c34ea0eec246a1c986111417cd779b53144629a
+      path: modules/zmk-driver-pmw3610-with-custom-studio-rpc
     - name: zmk-module-battery-nrf-vddh-oversampling
       remote: te9no
       revision: 59fc126f859d4e7700186c9906e4645379763c34
