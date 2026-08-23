@@ -1,7 +1,7 @@
 ---
 include:
   - board: xiao_ble//zmk
-    shield: Solstice_L rgbled_adapter
+    shield: Solstice_L rgbled_adapter dongle_display
     snippet: zmk-usb-logging studio-rpc-usb-uart cdc-boot battery-voltage-divider-oversampling Solstice_US
     artifact-name: Solstice_L_US
 
@@ -11,7 +11,7 @@ include:
     artifact-name: Solstice_R_US
 
   - board: xiao_ble//zmk
-    shield: Solstice_L rgbled_adapter
+    shield: Solstice_L rgbled_adapter dongle_display
     snippet: zmk-usb-logging studio-rpc-usb-uart cdc-boot battery-voltage-divider-oversampling Solstice_JIS
     artifact-name: Solstice_L_JIS
 
