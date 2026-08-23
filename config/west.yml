@@ -66,6 +66,18 @@ manifest:
     - name: zmk-module-settings-rpc
       remote: cormoran
       revision: 083a299dd8d31c275809c5a249b12486be24a7d2
+    - name: zmk-feature-runtime-combo
+      remote: cormoran
+      revision: d9490e7b5d41c516221d131241009e81740efcee
+      import:
+        name-blocklist:
+          - zmk-feature-custom-settings
+    - name: zmk-feature-runtime-macro
+      remote: cormoran
+      revision: 38530962eb7061b60efcb98e84585cfb1f0cb6de
+      import:
+        name-blocklist:
+          - zmk-feature-custom-settings
     - name: zmk-feature-module-physical-layout
       remote: cormoran
       revision: 4f18de45dc27820725d267916b4cdacc0e0b6cf9
