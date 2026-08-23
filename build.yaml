@@ -1,25 +1,26 @@
 ---
 include:
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: Solstice_L rgbled_adapter dongle_display
-    snippet: zmk-usb-logging studio-rpc-usb-uart Solstice_US
+    snippet: zmk-usb-logging studio-rpc-usb-uart cdc-boot battery-voltage-divider-oversampling Solstice_US
     artifact-name: Solstice_L_US
 
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: Solstice_R rgbled_adapter
-    snippet: zmk-usb-logging studio-rpc-usb-uart Solstice_US
+    snippet: zmk-usb-logging cdc-boot Solstice_US Solstice_R_Offset
     artifact-name: Solstice_R_US
 
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: Solstice_L rgbled_adapter dongle_display
-    snippet: zmk-usb-logging studio-rpc-usb-uart Solstice_JIS
+    snippet: zmk-usb-logging studio-rpc-usb-uart cdc-boot battery-voltage-divider-oversampling Solstice_JIS
     artifact-name: Solstice_L_JIS
 
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: Solstice_R rgbled_adapter
-    snippet: zmk-usb-logging studio-rpc-usb-uart Solstice_JIS
+    snippet: zmk-usb-logging cdc-boot Solstice_JIS Solstice_R_Offset
     artifact-name: Solstice_R_JIS
 
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: settings_reset
+    artifact-name: settings_reset
     

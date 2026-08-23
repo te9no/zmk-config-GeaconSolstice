@@ -26,53 +26,74 @@ manifest:
     - name: zmk
       # remote: zmkfirmware
       remote: te9no
-      revision: v0.3-branch+dya
+      revision: afe241df80b05c3f4e0cc95ada7584d24422a893
       import: app/west.yml
     - name: zmk-rgbled-widget
       remote: caksoylar
-      revision: v0.3
-    - name: zmk-pmw3610-driver
-      remote: efogdev
-      # remote: badjeff
-      revision: main
-      # revision: zmk-0.3
+      revision: e6b467792a1dabef8cfa5c9fd26bfefc9c16662b
     - name: zmk-analog-input-driver
       remote: badjeff
-      revision: main
+      revision: 2684f22ee7e2168d4393f7e63676912210a796fc
     - name: zmk-module-analoginput-rpc
       remote: te9no
-      revision: main
+      revision: e065461e907fa924c0029e1d4c94cec1d9093e17
     - name: zmk-dongle-display
       remote: te9no
-      revision: main
+      revision: b724f0a1275b32c330b2d78a7ec758a8657501dc
     - name: zmk-input-processor-keybind
       remote: te9no
       # remote: te9no
-      revision: main
+      revision: 10ad463f2e3c7a7dfb4b7cffd6bddd0e9e8b5bae
     - name: zmk-layout-shift
       remote: kot149
-      revision: v1
+      revision: 4d71f7cb743256ac619873dd44f510e9e9562739
     - name: zmk-input-processor-temp-layer-threshold
-      remote: yamaryu211
-      revision: main
+      remote: te9no
+      revision: 89520778db4401aea543e45c3b52817a0068666d
     # - name: prospector-zmk-module
       # remote: prospector
       # revision: v1.1.1
       # path: modules/prospector-zmk-module
     - name: zmk-module-runtime-input-processor
-      remote: cormoran
-      revision: main
+      remote: te9no
+      revision: 72387b5212264d26d704dbc43c765f6485470a77
     - name: zmk-module-battery-history
       remote: cormoran
-      revision: main
+      revision: 307755dd2ad4d320e14de162e8e5ef018f29d929
     - name: zmk-module-ble-management
       remote: cormoran
-      revision: main
+      revision: 57738cc4fc6ba80e82a7ac57741a0339cb186cd4
     - name: zmk-module-settings-rpc
       remote: cormoran
-      revision: main
+      revision: 083a299dd8d31c275809c5a249b12486be24a7d2
+    - name: zmk-feature-runtime-combo
+      remote: cormoran
+      revision: d9490e7b5d41c516221d131241009e81740efcee
+      import:
+        name-blocklist:
+          - zmk-feature-custom-settings
+    - name: zmk-feature-runtime-macro
+      remote: cormoran
+      revision: 38530962eb7061b60efcb98e84585cfb1f0cb6de
+      import:
+        name-blocklist:
+          - zmk-feature-custom-settings
     - name: zmk-feature-module-physical-layout
       remote: cormoran
-      revision: main
+      revision: 4f18de45dc27820725d267916b4cdacc0e0b6cf9
+    - name: zmk-feature-cdc-acm-bootloader-trigger
+      remote: te9no
+      revision: 1850754d269aab9ba73e4639371bfe59a4130e65
+    - name: zmk-feature-custom-settings
+      remote: cormoran
+      revision: c6a7fef3a3be3d3ace5de9a4b0628c6418cd1f3f
+      path: zmk-feature-custom-settings
+    - name: zmk-driver-pmw3610-with-custom-studio-rpc
+      remote: cormoran
+      revision: 5c34ea0eec246a1c986111417cd779b53144629a
+      path: modules/zmk-driver-pmw3610-with-custom-studio-rpc
+    - name: zmk-module-battery-nrf-vddh-oversampling
+      remote: te9no
+      revision: 59fc126f859d4e7700186c9906e4645379763c34
   self:
     path: config

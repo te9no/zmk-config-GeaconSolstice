@@ -1,0 +1,15 @@
+/ {
+    bootloader_trigger: bootloader_trigger {
+        compatible = "zmk,cdc-acm-bootloader-trigger";
+        cdc-port = <&snippet_zmk_usb_logging_uart>;
+    };
+};
+
+/*
+ * Keep only the dedicated USB logging/CDC boot and Studio RPC CDC instances.
+ * A third, unused board CDC function exhausts the nRF52840 USB endpoints and
+ * leaves the last Studio interface enumerable but unable to receive RPC data.
+ */
+&board_cdc_acm_uart {
+    status = "disabled";
+};

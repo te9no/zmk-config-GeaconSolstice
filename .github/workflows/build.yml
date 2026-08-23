@@ -4,8 +4,10 @@ on:
     paths:
       - config/**
       - boards/**
+      - snippets/**
       - build.yaml
+      - .github/workflows/build.yml
  
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3 
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3

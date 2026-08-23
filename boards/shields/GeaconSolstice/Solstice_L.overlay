@@ -187,3 +187,7 @@
   
 &xiao_serial { status = "disabled"; };
 &uart0 { status = "disabled";};
+
+&uicr {
+    nfct-pins-as-gpios;
+};
