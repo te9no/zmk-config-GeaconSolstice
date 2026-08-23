@@ -39,7 +39,7 @@ manifest:
       revision: e065461e907fa924c0029e1d4c94cec1d9093e17
     - name: zmk-dongle-display
       remote: te9no
-      revision: f6c1c0d0b73ac7e579d6eaeec2d15a01c7c89d52
+      revision: f706f291cf440c6e95f9a7c59cf65ae59b9fd8be
     - name: zmk-input-processor-keybind
       remote: te9no
       # remote: te9no
