@@ -186,6 +186,8 @@
 };
   
 &xiao_serial { status = "disabled"; };
+/* The default SPI connector pins are used by the key matrix. */
+&xiao_spi { status = "disabled"; };
 &uart0 { status = "disabled";};
 
 &uicr {
